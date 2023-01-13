@@ -16,7 +16,12 @@ AI
 
 Educations
 ======
-BS in Yonsei
+* B.S. in Mechanical Engineering, Yonsei University, 2022
+
+Work Experience
+======
+* Samsung Electronics, Robot Business team
+  * Mechanical engineer
 
 Publication
 ------
