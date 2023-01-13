@@ -9,7 +9,7 @@
 locale                   : "en-US"
 title                    : "Taewoong Kim"
 title_separator          : "-"
-name                     : &name "김태웅\n(Taewoong Kim)"
+name                     : &name "Taewoong Kim"
 description              : &description "personal description"
 url                      : https://twoongg.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -80,7 +80,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "김태웅(Taewoong Kim)"
+  name             : "김태웅 (Taewoong Kim)"
   avatar           : "profile.png"
   bio              : "let's begin"
   location         : "Seoul"
