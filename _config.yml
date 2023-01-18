@@ -86,9 +86,9 @@ author:
   location         : "Seoul"
   employer         :
 #  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : "http://yourfullgooglescholarurl.com"
+  googlescholar    : "https://scholar.google.com/"
   email            : "bradontwkim@gmail.com"
-  researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
+  researchgate     :  # example: "https://www.researchgate.net/"
   uri              :
   bitbucket        :
   codepen          :
@@ -96,10 +96,10 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "https://github.com/twoongg"
+  github           : "twoongg"
   google_plus      :
   keybase          :
-  instagram        :
+  instagram        : "twoongg"
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         :
