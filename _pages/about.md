@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I just began my new homepage.
+I am currently pursuing Master's degree in Artificial Intelligence at [Vision and Learning Lab](https://yonseivnl.github.io/) at Yonsei Unviersity. I am glad to be advised by Prof. [Jonghyun Choi](http://ppolon.github.io/). Before joining our group, I worked at Samsung Electronics as an mechanical engineer after I received B.S. in ME at Yonsei University.
 
 Research Interest
 ======
@@ -20,10 +20,10 @@ Educations
 
 Work Experience
 ======
-* Samsung Electronics, Robot Business team
+* Samsung Electronics, Robot Business team (2022 ~ 2023)
   * Mechanical engineer
 
 Publication
-------
-Coming Soon
+======
+-
 
