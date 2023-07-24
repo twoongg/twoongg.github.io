@@ -21,9 +21,17 @@ Educations
 Work Experience
 ======
 * Samsung Electronics, Robot Business team (2022 ~ 2023)
-  * Mechanical engineer
+  * Professional, Mechanical engineer
+* Samsung Electronics, Mobile Division (2021 Summer)
+  * Summer Internship, Mechanical engineer
 
 Publication
 ======
 -
+
+Award
+======
+* Generalist Language Grounding Agents Challenge 1st Place
+  *   Embodied AI Workshop @ CVPR 2023 [Link](https://askforalfred.com/EAI23/)
+
 
