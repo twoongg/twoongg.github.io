@@ -10,7 +10,7 @@ redirect_from:
 
 I am currently pursuing a Master's degree in Artificial Intelligence at [Vision and Learning Lab](https://yonseivnl.github.io/) at Yonsei Unviersity. I am glad to be advised by Prof. [Jonghyun Choi](http://ppolon.github.io/). Before joining this group, I worked at Samsung Electronics as a mechanical engineer after obtaining my B.S. in ME at Yonsei University.
 
-My long-term vision centers around the seamless integration of artificial intelligence and mechanical engineering, particularly within interactive real-world contexts. My immediate focus is on embodied AI, encompassing machine learning, computer vision, and NLP.
+My current interest lies on embodied AI, encompassing machine learning, computer vision, and NLP. My long-term vision centers around the seamless integration of artificial intelligence, robotics and mechanical engineering; to solve real-world problems
 
 Research Interest
 ======
