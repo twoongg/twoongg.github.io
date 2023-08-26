@@ -29,7 +29,13 @@ Work Experience
 
 Publication
 ======
--
+**2023**
+
+- <span style="color:darkblue">**ECLAIR: Event-Cognizant Language Interaction Embodied Robots**</span>  
+Jinyeon Kim, [Byeonghwi Kim](https://bhkim94.github.io/), Cheolhong Min, Yuyeong Kim, **Taewoong Kim** and [Jonghyun Choi](http://ppolon.github.io/)  
+Learning by Asking for Intelligent Robots and Agents (LA4IRA) @ IEEE-ROMAN 2023 [Link](https://la4ira.github.io/index.html)  
+[[paper]](http://to-be-appeared) [[code]](http://to-be-appeared)
+
 
 Award
 ======
