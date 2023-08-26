@@ -31,9 +31,9 @@ Publication
 ======
 **2023**
 
-- <span style="color:darkblue">**ECLAIR: Event-Cognizant Language Interaction Embodied Robots**</span>  
+- **ECLAIR: Event-Cognizant Language Interaction Embodied Robots**  
 Jinyeon Kim, [Byeonghwi Kim](https://bhkim94.github.io/), Cheolhong Min, Yuyeong Kim, **Taewoong Kim** and [Jonghyun Choi](http://ppolon.github.io/)  
-Learning by Asking for Intelligent Robots and Agents (LA4IRA) @ IEEE-ROMAN 2023 [Link](https://la4ira.github.io/index.html)  
+_Learning by Asking for Intelligent Robots and Agents (LA4IRA) @ IEEE-ROMAN 2023 [Link](https://la4ira.github.io/index.html)_  
 [[paper]](http://to-be-appeared) [[code]](http://to-be-appeared)
 
 
