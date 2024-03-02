@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am currently pursuing a Master's degree in Artificial Intelligence at [Vision and Learning Lab](https://yonseivnl.github.io/) at Yonsei Unviersity. I am glad to be advised by Prof. [Jonghyun Choi](http://ppolon.github.io/). Before joining this group, I worked at Samsung Electronics as a mechanical engineer after obtaining my B.S. in ME at Yonsei University.
+I am currently pursuing a Master's degree in Artificial Intelligence at [Vision and Learning Lab](https://yonseivnl.github.io/) at Yonsei Unviersity. I am glad to be advised by Prof. [Jonghyun Choi](http://ppolon.github.io/). Before joining this group, I worked at Samsung Electronics as a mechanical engineer after obtaining my B.S. in Mechanical Engineering at Yonsei University.
 
 My current interest lies on embodied AI, encompassing machine learning, computer vision, and NLP. My long-term vision centers around the seamless integration of artificial intelligence, robotics and mechanical engineering; to solve real-world problems
 
@@ -29,6 +29,14 @@ Work Experience
 
 Publication
 ======
+**2024**
+- **Multi-Modal Grounded Planning and Efficient Replanning For Learning Embodied Agents with A Few Examples**  \
+데이터 부족 환경에서의 다중 모달 기반 계획 및 효율적인 재계획을 수립하는 에이전트  \
+**Taewoong Kim**, [Byeonghwi Kim](https://bhkim94.github.io/), and [Jonghyun Choi](http://ppolon.github.io/)  
+_Workshop on Image Processing and Image Understanding (IPIU 2024) [Link](http://www.ipiu.or.kr/)_  
+[[paper]](http://to-be-appeared) [[code]](http://to-be-appeared)
+
+
 **2023**
 
 - **ECLAIR: Event-Cognizant Language Interaction Embodied Robots**  
@@ -41,5 +49,8 @@ Award
 ======
 * Generalist Language Grounding Agents Challenge 1st Place
   *   Embodied AI Workshop @ CVPR 2023 [Link](https://askforalfred.com/EAI23/)
+* Best Paper Award (우수논문상 은상)
+  *   IPIU 2024 [Link](http://to-be-appeared)
+
 
 
