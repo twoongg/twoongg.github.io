@@ -312,7 +312,7 @@ compress_html:
     
     # Analytics
 analytics:
-  provider               : "google-gtag" 
+  provider               : "google" 
                           # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
     tracking_id          : "G-9BWYESK2L9"
