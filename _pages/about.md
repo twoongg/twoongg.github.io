@@ -18,6 +18,7 @@ Embodied AI, computer vision, multi-modal learning
 
 Educations
 ======
+* M.S. in Artificial Intelligence, Yonsei University, 2024
 * B.S. in Mechanical Engineering, Yonsei University, 2022
 
 Work Experience
@@ -30,6 +31,12 @@ Work Experience
 Publication
 ======
 **2024**
+- **ReALFRED: Interactive Instruction Following Benchmark in Photo-Realistic Environment**  \
+**Taewoong Kim**, [Cheolhong Min](https://to-be-appeared), [Byeonghwi Kim](https://bhkim94.github.io/), [Jinyeon Kim](https://to-be-appeared), [Wonje Jeong](https://to-be-appeared), and [Jonghyun Choi](http://ppolon.github.io/)  
+_ECCV 2024_  
+[[paper]](http://to-be-appeared) [[code]](https://github.com/snumprlab/realfred)
+
+
 - **Multi-Modal Grounded Planning and Efficient Replanning For Learning Embodied Agents with A Few Examples**  \
 데이터 부족 환경에서의 다중 모달 기반 계획 및 효율적인 재계획을 수립하는 에이전트  \
 **Taewoong Kim**, [Byeonghwi Kim](https://bhkim94.github.io/), and [Jonghyun Choi](http://ppolon.github.io/)  
