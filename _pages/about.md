@@ -31,7 +31,7 @@ Work Experience
 Publication
 ======
 **2024**
-- **ReALFRED: Interactive Instruction Following Benchmark in Photo-Realistic Environment**  \
+- **ReALFRED: Embodied Instruction Following Benchmark in Photo-Realistic Environment**  \
 **Taewoong Kim**, [Cheolhong Min](https://to-be-appeared), [Byeonghwi Kim](https://bhkim94.github.io/), [Jinyeon Kim](https://to-be-appeared), [Wonje Jeong](https://to-be-appeared), and [Jonghyun Choi](http://ppolon.github.io/)  
 _ECCV 2024_  
 [[Proejct page]](https://twoongg.github.io/projects/realfred/) [[paper]](http://to-be-appeared) [[code]](https://github.com/snumprlab/realfred)
