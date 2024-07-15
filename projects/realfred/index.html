@@ -7,10 +7,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="ReALFRED: Interactive Instruction Following Benchmark in Photo-Realistic Environment">
+        content="ReALFRED: Embodied Instruction Following Benchmark in Photo-Realistic Environment">
   <meta name="keywords" content="Embodied AI">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ReALFRED: Interactive Instruction Following Benchmark in Photo-Realistic Environment</title>
+  <title>ReALFRED: Embodied Instruction Following Benchmark in Photo-Realistic Environment</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BWYESK2L9"></script>
@@ -90,10 +90,10 @@
           </h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://twoongg.github.io">Taewoong Kim*</a>,
+              <a href="https://twoongg.github.io">Taewoong Kim</a>*,
             </span>
             <span class="author-block">
-              <a href="https://mch0916.github.io">Cheolhong Min*</a>,
+              <a href="https://mch0916.github.io">Cheolhong Min</a>*,
             </span>
             <span class="author-block">
               <a href="https://bhkim94.github.io">Byeonghwi Kim</a>,
@@ -110,10 +110,10 @@
           </div>
 
           <div class="is-size-5 publication-authors">
-            <!-- <sup>1</sup><span class="author-block">Yonsei University</span>
-            <sup>2</sup><span class="author-block">Seoul National University</span> -->
+            <!-- <sup>1</sup><span class="author-block">Seoul National University</span>
+            <sup>2</sup><span class="author-block">Yonsei University</span> -->
             <br>
-            <p style="font-size:17px"><sup>&dagger;</sup>Corresponding author.</p>
+            <p style="font-size:17px"><sup>*</sup>Equal Contribution.<sup>&dagger;</sup>Corresponding author.</p>
           </div>
 
           <div class="column has-text-centered">
@@ -176,7 +176,7 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src='static/figures/realfred.png' style="margin-left: auto; margin-right: auto; display: block; border-style: none width:100%;max-width:100%">
+      <img src='static/figures/teaser.png' style="margin-left: auto; margin-right: auto; display: block; border-style: none width:100%;max-width:100%">
       <h2 class="subtitle has-text-centered">
         <span class="dnerf">Proposed ReALFRED bechmark</span>
       </h2>
@@ -195,7 +195,7 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Simulated virtual environments have been widely used to learn robotic agents that perform daily household tasks. These environments encourage research progress by far, but often provide limited object interactability, visual appearance different from real-world environments, or relatively smaller environment sizes. This prevents the learned models in the virtual scenes from being readily deployable. To bridge the gap between these learning environments and deploying (i.e., real) environments, we propose the ReALFRED benchmark that employs real-world scenes, objects, and room layouts to learn agents to complete household tasks by understanding free-form language instructions and interacting with objects in large, multi-room and 3D-captured scenes. Specifically, we extend the ALFRED benchmark with updates for larger environmental spaces with smaller visual domain gaps. With ReALFRED, we analyze previously crafted methods for the ALFRED benchmark and observe that they consistently yield lower performance in all metrics, encouraging the community to develop methods in more realistic environments. We will release the dataset and code for reproducibility.
+              Simulated virtual environments have been widely used to learn robotic agents that perform daily household tasks. These environments encourage research progress by far, but often provide limited object interactability, visual appearance different from real-world environments, or relatively smaller environment sizes. This prevents the learned models in the virtual scenes from being readily deployable. To bridge the gap between these learning environments and deploying (i.e., real) environments, we propose the ReALFRED benchmark that employs real-world scenes, objects, and room layouts to learn agents to complete household tasks by understanding free-form language instructions and interacting with objects in large, multi-room and 3D-captured scenes. Specifically, we extend the ALFRED benchmark with updates for larger environmental spaces with smaller visual domain gaps. With ReALFRED, we analyze previously crafted methods for the ALFRED benchmark and observe that they consistently yield lower performance in all metrics, encouraging the community to develop methods in more realistic environments. Our code and data are publicly available.
             </p>
           </div>
         </div>
@@ -204,24 +204,92 @@
   </div>
 </section>
 
-<section class="hero is-light is-small">
+<section class="section">
+  <div class="container is-max-widescreen">
+    <h2 class="title is-3">The ReALFRED Benchmark</h2>
+
+    <div class="content has-text-justified">
+      <p>
+        To develop agents capable of performing household tasks, substantial progress
+        has been achieved in various domains, including navigation, rearrangement, and manipulation tasks. In particular, Shridhar <i>et al.</i> recently introduced
+        the <span style="color: #305fac"><a href="https://askforalfred.com/">ALFRED</a></span> benchmark that requires agents to complete long-horizon household tasks by jointly understanding egocentric visual observations and natural
+        language instructions in household environments.
+      </p>
+      <p>
+        However, the spatial size of these environments is somewhat restricted to a
+        single room compared to the size of previously proposed 3D-captured environments consisting of multiple rooms, which could potentially restrict the
+        deployability of agents to larger environments. Furthermore, the environments
+        used in the <span style="color: #305fac"><a href="https://askforalfred.com/">ALFRED</a></span> benchmark are built with synthetic CAD assets and
+        therefore could potentially yield visual aesthetics different from those obtained
+        from real-world environments, which could eventually cause performance
+        degradation due to visual domain gaps.
+        </p>
+        <p>
+        To address these issues, we extend the <span style="color: #305fac"><a href="https://askforalfred.com/">ALFRED</a></span> benchmark and propose
+        a challenging benchmark, named the <b>ReALFRED</b> benchmark, which requires
+        agents to perform household tasks in large indoor environments captured in 3D
+        with object interaction. For training and evaluation, we follow the same protocol
+        as <span style="color: #305fac"><a href="https://askforalfred.com/">ALFRED</a></span> to collect expert demonstrations in the captured large environments.
+      </p>
+      
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-two-quarters">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-two-quarters">
+            <img src="static/figures/image.png">
+            <h5>While other benchmarks provide one or two aspects, our
+              proposed <b>ReALFRED</b> benchmark addresses all of these aspects.</h5>
+          </div>
+        </div>
+      </div>
+      <div class="column is-two-quarters">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-two-quarters">
+            <img src="static/figures/word-distribution.png">
+            <h5>Word distribution</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</section>
+
+
+<section class="section">
+  <div class="container is-max-widescreen">
+    <h2 class="title is-3">Visualization</h2>
+    <p>Will be available soon!</p>
+</section>
+
+<section class="hero is-light">
   <div class="hero-body">
-    <div class="container is-max-desktop">
-      <!-- Content. -->
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-full-width">
-          <h2 class="title is-3">Content</h2>
-          <div class="content has-text-justified">
-            <p>
-              Will be availbale soon!
-            </p>
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3">Results</h2>
+      <div class="content has-text-justified">
+        <p>
+          We follow the same evaluation protocol of the <span style="color: #305fac"><a href="https://askforalfred.com/">ALFRED</a></span> benchmark.
+          The primary metric is Success Rate (SR) which measures the percentage of
+          completed tasks. Goal-Condition Success Rate (GC) measures the percentage
+          of achieved goal conditions. Finally, we also measure the penalized SR and GC
+          by the length of the trajectory path (<i>i.e.</i>, PLWSR and PLWGC) which indicate
+          how efficiently an agent completes tasks. 
+        <p>
+        <p>
+          For more details, please check out the paper.
+        </p>
+        <br>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full-width">
+            <img src="static/tables/results.png">
+            <h5>Task and Goal-Condition Success Rate</h5>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
 
 
 <section class="section" id="BibTeX">
@@ -229,7 +297,7 @@
     <h2 class="title">BibTeX</h2>
     <pre><code>@inproceedings{kim2024realfred,
   author    = {Kim, Taewoong and Min, Cheolhong and Kim, Byeonghwi and Kim, Jinyeon and Jeung, Wonje and Choi, Jonghyun},
-  title     = {ReALFRED: Interactive Instruction Following Benchmark in Photo-Realistic Environment},
+  title     = {ReALFRED: Embodied Instruction Following Benchmark in Photo-Realistic Environment},
   booktitle = {ECCV},
   year      = {2024},
 }</code></pre>
