@@ -7,10 +7,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="ReALFRED: Embodied Instruction Following Benchmark in Photo-Realistic Environment">
+        content="ReALFRED: An Embodied Instruction Following Benchmark in Photo-Realistic Environment">
   <meta name="keywords" content="Embodied AI">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ReALFRED: Embodied Instruction Following Benchmark in Photo-Realistic Environment</title>
+  <title>ReALFRED: An Embodied Instruction Following Benchmark in Photo-Realistic Environment</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BWYESK2L9"></script>
@@ -82,7 +82,7 @@
       <div class="columns is-centered is-full-width">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title" style="font-size:45px">
-            ReALFRED: Embodied Instruction Following  <br>
+            ReALFRED: An Embodied Instruction Following  <br>
             Benchmark in Photo-Realistic Environments
           </h1>
           <h1 class="title is-4 publication-title">
@@ -90,28 +90,28 @@
           </h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://twoongg.github.io">Taewoong Kim</a>*,
+              <a href="https://twoongg.github.io">Taewoong Kim</a><sup>1,*</sup>,
             </span>
             <span class="author-block">
-              <a href="https://mch0916.github.io">Cheolhong Min</a>*,
+              <a href="https://mch0916.github.io">Cheolhong Min</a><sup>1,*</sup>,
             </span>
             <span class="author-block">
-              <a href="https://bhkim94.github.io">Byeonghwi Kim</a>,
+              <a href="https://bhkim94.github.io">Byeonghwi Kim</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://wild-reptile-5c4.notion.site/Jinyeon-Kim-s-Portfolio-page-ef855010f6c445488ad6969ed7cda11f?pvs=4">Jinyeon Kim</a>,
+              <a href="https://wild-reptile-5c4.notion.site/Jinyeon-Kim-s-Portfolio-page-ef855010f6c445488ad6969ed7cda11f?pvs=4">Jinyeon Kim</a><sup>1,2</sup>,
             </span>
             <span class="author-block">
-              <a href="https://cryinginitial.github.io/">Wonje Jeung</a>,
+              <a href="https://cryinginitial.github.io/">Wonje Jeung</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://ppolon.github.io">Jonghyun Choi</a><sup>&dagger;</sup>
+              <a href="https://ppolon.github.io">Jonghyun Choi</a><sup>1,&dagger;</sup>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <!-- <sup>1</sup><span class="author-block">Seoul National University</span>
-            <sup>2</sup><span class="author-block">Yonsei University</span> -->
+            <sup>1</sup><span class="author-block">Seoul National University</span>
+            <sup>2</sup><span class="author-block">Yonsei University</span>
             <br>
             <p style="font-size:17px"><sup>*</sup>Equal Contribution.<sup>&dagger;</sup>Corresponding author.</p>
           </div>
@@ -219,17 +219,17 @@
         However, the spatial size of these environments is somewhat restricted to a
         single room compared to the size of previously proposed 3D-captured environments consisting of multiple rooms, which could potentially restrict the
         deployability of agents to larger environments. Furthermore, the environments
-        used in the <span style="color: #305fac"><a href="https://askforalfred.com/">ALFRED</a></span> benchmark are built with synthetic CAD assets and
+        used in the ALFRED benchmark are built with synthetic CAD assets and
         therefore could potentially yield visual aesthetics different from those obtained
         from real-world environments, which could eventually cause performance
         degradation due to visual domain gaps.
         </p>
         <p>
-        To address these issues, we extend the <span style="color: #305fac"><a href="https://askforalfred.com/">ALFRED</a></span> benchmark and propose
+        To address these issues, we extend the ALFRED benchmark and propose
         a challenging benchmark, named the <b>ReALFRED</b> benchmark, which requires
         agents to perform household tasks in large indoor environments captured in 3D
         with object interaction. For training and evaluation, we follow the same protocol
-        as <span style="color: #305fac"><a href="https://askforalfred.com/">ALFRED</a></span> to collect expert demonstrations in the captured large environments.
+        as ALFRED to collect expert demonstrations in the captured large environments.
       </p>
       
     </div>
@@ -241,6 +241,7 @@
             <img src="static/figures/image.png">
             <h5>While other benchmarks provide one or two aspects, our
               proposed <b>ReALFRED</b> benchmark addresses all of these aspects.</h5>
+            <h5>1. Photo-realistic, 2. Interaction, and 3. Free-from language</h5>
           </div>
         </div>
       </div>
@@ -249,6 +250,13 @@
           <div class="column is-two-quarters">
             <img src="static/figures/word-distribution.png">
             <h5>Word distribution</h5>
+            <h5> The ReALFRED benchmark
+              offers 30,696 language directives, each
+              comprising a human-annotated high-level
+              goal and a set of step-by-step instructions. These directives are collected from
+              93 Amazon Mechanical Turk workers with
+              a Master qualification, ensuring highquality. Collected annotations are validated through an additional voting survey, and invalid instructions are replaced
+              with newly collected instructions.</h5>
           </div>
         </div>
       </div>
@@ -297,7 +305,7 @@
     <h2 class="title">BibTeX</h2>
     <pre><code>@inproceedings{kim2024realfred,
   author    = {Kim, Taewoong and Min, Cheolhong and Kim, Byeonghwi and Kim, Jinyeon and Jeung, Wonje and Choi, Jonghyun},
-  title     = {ReALFRED: Embodied Instruction Following Benchmark in Photo-Realistic Environment},
+  title     = {ReALFRED: An Embodied Instruction Following Benchmark in Photo-Realistic Environment},
   booktitle = {ECCV},
   year      = {2024},
 }</code></pre>
