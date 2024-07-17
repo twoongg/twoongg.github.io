@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am currently pursuing a Master's degree in Artificial Intelligence at [Vision and Learning Lab](https://yonseivnl.github.io/) at Yonsei Unviersity. I am glad to be advised by Prof. [Jonghyun Choi](http://ppolon.github.io/). Before joining this group, I worked at Samsung Electronics as a mechanical engineer after obtaining my B.S. in Mechanical Engineering at Yonsei University.
+I am a Ph.D. student in the department of Electrical and Computer Engineering at [Machine Perception and Reasoning Lab](https://snumprlab.github.io/) at Seoul National Unviersity. I am glad to be advised by Prof. [Jonghyun Choi](http://ppolon.github.io/). Before joining this group, I worked at Samsung Electronics as a mechanical engineer after obtaining my B.S. in Mechanical Engineering at Yonsei University. I also received Master's degree in Artificial Intelligence undeer the supervision of Prof. [Jonghyun Choi](http://ppolon.github.io/).
 
 My current interest lies on embodied AI, encompassing machine learning, computer vision, and NLP. My long-term vision centers around the seamless integration of artificial intelligence, robotics and mechanical engineering; to solve real-world problems
 
@@ -32,7 +32,7 @@ Publication
 ======
 **2024**
 - **ReALFRED: An Embodied Instruction Following Benchmark in Photo-Realistic Environment**  \
-**Taewoong Kim**, [Cheolhong Min](https://to-be-appeared), [Byeonghwi Kim](https://bhkim94.github.io/), [Jinyeon Kim](https://to-be-appeared), [Wonje Jeung](https://to-be-appeared), and [Jonghyun Choi](http://ppolon.github.io/)  
+**Taewoong Kim**, [Cheolhong Min](https://mch0916.github.io/), [Byeonghwi Kim](https://bhkim94.github.io/), [Jinyeon Kim](https://wild-reptile-5c4.notion.site/Jinyeon-Kim-s-Portfolio-page-ef855010f6c445488ad6969ed7cda11f), [Wonje Jeung](https://cryinginitial.github.io/), and [Jonghyun Choi](http://ppolon.github.io/)  
 _ECCV 2024_  
 [[Proejct page]](https://twoongg.github.io/projects/realfred/) [[paper]](http://to-be-appeared) [[code]](https://github.com/snumprlab/realfred)
 
