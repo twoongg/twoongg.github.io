@@ -8,9 +8,11 @@ redirect_from:
   - /about.html
 ---
 
-I am a Ph.D. student in the department of Electrical and Computer Engineering at [Machine Perception and Reasoning Lab](https://snumprlab.github.io/) at Seoul National Unviersity. I am glad to be advised by Prof. [Jonghyun Choi](http://ppolon.github.io/). Before joining this group, I worked at Samsung Electronics as a mechanical engineer after obtaining my B.S. in Mechanical Engineering at Yonsei University. I also received Master's degree in Artificial Intelligence undeer the supervision of Prof. [Jonghyun Choi](http://ppolon.github.io/).
+I am a Ph.D. student in the department of Electrical and Computer Engineering at [SNU Machine Perception and Reasoning Lab](https://snumprlab.github.io/) at [Seoul National University](https://en.snu.ac.kr/) advised by Prof. [Jonghyun Choi](http://ppolon.github.io/). Before joining this group, I worked at [Samsung Electronics](https://www.samsung.com/us/) as a mechanical engineer.
 
-My current interest lies on embodied AI, encompassing machine learning, computer vision, and NLP. My long-term vision centers around the seamless integration of artificial intelligence, robotics and mechanical engineering; to solve real-world problems
+I received a B.S. in [Mechanical Engineering](https://me.yonsei.ac.kr/me_en/index.do) and an M.S. in [Artificial Intelligence](https://ai.yonsei.ac.kr/eng/index.php) from [Yonsei University](https://www.yonsei.ac.kr/en_sc/index.jsp).
+
+My current interest lies in embodied AI, encompassing machine learning, computer vision, and NLP. My long-term vision centers around the seamless integration of artificial intelligence, robotics and mechanical engineering; to solve real-world problems.
 
 Research Interest
 ======
