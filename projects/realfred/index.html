@@ -43,6 +43,8 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
+  
 </head>
 <body>
 
@@ -268,8 +270,286 @@
 <section class="section">
   <div class="container is-max-widescreen">
     <h2 class="title is-3">Visualization</h2>
-    <p>Will be available soon!</p>
+  </div>
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="https://realfred-snumprlab.github.io/static/videos/scene2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="https://realfred-snumprlab.github.io/static/videos/scene3.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="https://realfred-snumprlab.github.io/static/videos/scene4.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="https://realfred-snumprlab.github.io/static/videos/scene5.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="https://realfred-snumprlab.github.io/static/videos/scene6.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="https://realfred-snumprlab.github.io/static/videos/scene7.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="https://realfred-snumprlab.github.io/static/videos/scene8.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
+
+
+<head>
+  <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Jekyll v3.8.5">
+  <title>ALFRED -- A Benchmark for Interpreting Grounded Instructions for Everyday Tasks</title>
+
+  <link rel="canonical" href="http://askforalfred.com">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css">
+
+  <script>
+    /**
+    * Function that captures a click on an outbound link in Analytics.
+    * This function takes a valid URL string as an argument, and uses that URL string
+    * as the event label. Setting the transport method to 'beacon' lets the hit be sent
+    * using 'navigator.sendBeacon' in browser that support it.
+    */
+    var captureOutboundLink = function(url) {
+      ga('send', 'event', 'outbound', 'click', url, {
+      'transport': 'beacon'
+      });
+      ga('jesseTracker.send', 'event', 'outbound', 'click', url, {
+      'transport': 'beacon'
+      });
+      // 'hitCallback': function(){document.location = url;}
+      //});
+      return false;
+    }
+  </script>
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+  <script>
+    function findGetParameter(parameterName) {
+      var result = null,
+          tmp = [];
+      var items = location.search.substr(1).split("&");
+      for (var index = 0; index < items.length; index++) {
+          tmp = items[index].split("=");
+          if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+      }
+      return result;
+    }
+
+    // Run the data viewer.
+    var splits_data = 0;
+    var training_size = 0;
+    var val_s_size = 0;
+    var val_u_size = 0;
+    var vid = null;
+    var splits_names;
+    var splits_sizes;
+
+    function load_data() {
+      $.getJSON('splits.json', function(jd) {
+        splits_data = jd;
+        training_size = jd.train.length;
+        splits_names = ["train"];
+        splits_sizes = [training_size];
+
+        vid = findGetParameter("vid");
+        if (vid == null) {
+          choose_example();
+        }
+        view_example();
+      });
+    }
+
+    function new_random_example() {
+      captureOutboundLink('random');
+      choose_example();
+      view_example();
+    }
+
+    function retrieve_example() {
+      captureOutboundLink('retrieve');
+
+      var raw_str = $('#input_retrieve_example').val();
+      var ps = raw_str.split(".");
+      var s;
+      var i;
+      var S;
+      vid = -1;
+      for (s=0; s < 3; s++) {
+        S = splits_names[s];
+        I = splits_sizes[s];
+        for (i=0; i < I; i++) {
+          if (splits_data[S][i]["repeat_idx"] == ps[1]) {
+            if (splits_data[S][i]["task"].localeCompare(ps[0]) == 0) {
+              vid = (training_size * s) + i;
+              break;
+            }
+          }
+        }
+        if (vid > -1) {
+          break;
+        }
+      }
+
+      if (vid > -1) {
+        view_example();
+      }
+      else {
+        $('#warning_retrieve_example').show();
+      }
+    }
+
+    function choose_example() {
+      // Choose a random example.
+      var s = 0;
+      var S = splits_names[s];
+      var I = splits_sizes[s];
+      var i = Math.floor((Math.random() * I));
+      vid = (training_size * s) + i;
+    }
+
+    function view_example() {
+      $('#warning_retrieve_example').hide();
+      var s = 0;
+      var i = vid % training_size;
+      var S = splits_names[s];
+      var I = splits_sizes[s];
+
+      // Show video.
+      var video = document.getElementById('expert_video');
+      // video.src = "https://mturk.jessethomason.com/lang_2_plan/2.1.0/" + splits_data[S][i]["task"] + "/video.mp4";
+      // video.src = "https://ai2-vision-alfred-data-explorer.s3-us-west-2.amazonaws.com/" + splits_data[S][i]["task"] + "/video.mp4";
+      video.src = "https://realfred-snumprlab.github.io/static/expertDemo/" + "train/" + splits_data[S][i]["task"] + "/video_wide.mp4";
+      // console.log(video.src)
+      video.playbackRate = 2;
+      video.defaultPlaybackRate = 2;
+      video.play();
+
+      // Retrieve text from JSON.
+      var aidx = splits_data[S][i]["repeat_idx"];
+      var traj_json_url = "https://realfred-snumprlab.github.io/data/Re_json_2.1.0/" + S + "/" + splits_data[S][i]["task"] + "/traj_data.json";
+      // console.log(traj_json_url)
+      $.getJSON(traj_json_url, function(jd) {
+        // Populate high and low level text.
+        $('#highlevel').html(jd.turk_annotations.anns[aidx].task_desc);
+        $('#lowlevel').html(jd.turk_annotations.anns[aidx].high_descs.join("<br/>"));
+      });
+
+      // Populate retrieval field with video ID.
+      $('#input_retrieve_example').val(splits_data[S][i]["task"] + "." + aidx);
+
+      // Get plink
+      var url_whole = window.location.href;
+      var res = url_whole.split("?");
+      var url_base = res[0];
+      $('#plink').html(url_base + "?vid=" + vid);
+    }
+
+  </script>
+
+
+  <!-- Custom styles for this template -->
+  <link href="https://getbootstrap.com/docs/4.3/examples/jumbotron/jumbotron.css" rel="stylesheet">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+</head>
+
+
+<section class="hero is-light is-small">
+  
+</section>
+
+<body onload="load_data()" style="padding-top: 0px;">
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Data Explorer</h2> 
+
+  <table>
+  <tr><td>
+  <div>
+    <button class="btn btn-info btn-md" onclick="new_random_example()">Show Random Example</button>
+    <br/><br/>
+    <button class="btn btn-info btn-md" onclick="retrieve_example()">Retrieve Example</button>
+    <input width="100%" id="input_retrieve_example">
+    <div class="alert alert-danger" role="alert" id="warning_retrieve_example">Could not parse the specified example name.</div>
+    <table class="table table-striped">
+    <tr><td colspan=2>
+      <center><video width="400" height="400" controls id="expert_video" type="video/mp4">
+      Your browser does not support the video tag.
+      </video></center>
+    </td></tr>
+    <tr><td><b>Goal Instruction</b></td><td id="highlevel"></td></tr>
+    <tr><td><b>Step-by-Step Instructions</b></td><td id="lowlevel"></td></tr>
+    </table>
+  </div>
+  </td></tr>
+  </table>
+</section>
+
+  <hr>
+
+</div> <!-- /container -->
+</body>
+
 
 <section class="hero is-light">
   <div class="hero-body">
@@ -299,7 +579,6 @@
   </div>
 </section>
 
-
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
@@ -325,6 +604,7 @@
   </div>
 </footer>
 
+  
 <!-- Default Statcounter code for realfred
 https://twoongg.github.io/projects/realfred/ -->
 <script type="text/javascript">
