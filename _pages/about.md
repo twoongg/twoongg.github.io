@@ -36,7 +36,7 @@ Publication
 - **ReALFRED: An Embodied Instruction Following Benchmark in Photo-Realistic Environment**  \
 **Taewoong Kim**, [Cheolhong Min](https://mch0916.github.io/), [Byeonghwi Kim](https://bhkim94.github.io/), [Jinyeon Kim](https://wild-reptile-5c4.notion.site/Jinyeon-Kim-s-Portfolio-page-ef855010f6c445488ad6969ed7cda11f), [Wonje Jeung](https://cryinginitial.github.io/), and [Jonghyun Choi](http://ppolon.github.io/)  
 _ECCV 2024_  
-[[Proejct page]](https://twoongg.github.io/projects/realfred/) [[paper]](http://to-be-appeared) [[code]](https://github.com/snumprlab/realfred)
+[[Proejct page]](https://twoongg.github.io/projects/realfred/) [[paper]](https://arxiv.org/abs/2407.18550) [[code]](https://github.com/snumprlab/realfred)
 
 
 - **Multi-Modal Grounded Planning and Efficient Replanning For Learning Embodied Agents with A Few Examples**  \
