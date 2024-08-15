@@ -82,12 +82,12 @@ analytics:
 author:
   name             : "김태웅 (Taewoong Kim)"
   avatar           : "profile.png"
-  bio              : "M.S Student in AI"
+  bio              : "Ph.D. student"
   location         : "Seoul"
   employer         :
 #  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : "https://scholar.google.com/"
-  email            : "bradontwkim@gmail.com"
+  googlescholar    : "https://scholar.google.com/citations?hl=en&user=uuALoRMAAAAJ"
+  email            : "twoongg.kim@snu.ac.kr"
   researchgate     :  # example: "https://www.researchgate.net/"
   uri              :
   bitbucket        :
@@ -102,8 +102,8 @@ author:
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         :
-  #orcid            : "http://orcid.org/yourorcidurl"
+  linkedin         : "taewoong-kim-b2b35426a"
+  orcid            : "https://orcid.org/0000-0001-9999-6474"
   pinterest        :
   soundcloud       :
   #stackoverflow    : # http://stackoverflow.com/users/123456/username
