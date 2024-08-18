@@ -10,7 +10,9 @@ redirect_from:
 
 I am a Ph.D. student in the department of Electrical and Computer Engineering at [SNU Machine Perception and Reasoning Lab](https://snumprlab.github.io/) at [Seoul National University](https://en.snu.ac.kr/) advised by Prof. [Jonghyun Choi](http://ppolon.github.io/). Before joining this group, I worked at [Samsung Electronics](https://www.samsung.com/us/) as a mechanical engineer.
 
-I received a B.S. in [Mechanical Engineering](https://me.yonsei.ac.kr/me_en/index.do) and an M.S. in [Artificial Intelligence](https://ai.yonsei.ac.kr/eng/index.php) from [Yonsei University](https://www.yonsei.ac.kr/en_sc/index.jsp).
+I received an M.S. degree in [Artificial Intelligence](https://ai.yonsei.ac.kr/eng/index.php) from [Yonsei University](https://www.yonsei.ac.kr/en_sc/index.jsp)
+under the supervision of Prof. [Jonghyun Choi](http://ppolon.github.io/)
+and a B.S. degree in [Mechanical Engineering](https://me.yonsei.ac.kr/me_en/index.do) from same university.
 
 My current interest lies in embodied AI, encompassing machine learning, computer vision, and NLP. My long-term vision centers around the seamless integration of artificial intelligence, robotics and mechanical engineering; to solve real-world problems.
 
@@ -60,6 +62,8 @@ Award
   *   Embodied AI Workshop @ CVPR 2023 [Link](https://askforalfred.com/EAI23/)
 * Best Paper Award (우수논문상 은상)
   *   IPIU 2024 [Link](http://to-be-appeared)
+* Academic Award
+  * Yonsei University ('19, '20, '21, '22)
 
 
 Academic Services
