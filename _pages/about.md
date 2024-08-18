@@ -40,7 +40,7 @@ _ECCV 2024_
 
 
 <!-- - **Multi-Modal Grounded Planning and Efficient Replanning For Learning Embodied Agents with A Few Examples**  \ -->
-**데이터 부족 환경에서의 다중 모달 기반 계획 및 효율적인 재계획을 수립하는 에이전트 (Kor)**  \
+- **데이터 부족 환경에서의 다중 모달 기반 계획 및 효율적인 재계획을 수립하는 에이전트 (Kor)**  \
 **Taewoong Kim**, [Byeonghwi Kim](https://bhkim94.github.io/), and [Jonghyun Choi](http://ppolon.github.io/)  
 _Workshop on Image Processing and Image Understanding (IPIU 2024) [Link](http://www.ipiu.or.kr/)_  
 [[paper]](http://to-be-appeared) [[code]](http://to-be-appeared)
