@@ -12,7 +12,7 @@ I am a Ph.D. student in the department of Electrical and Computer Engineering at
 
 I received an M.S. degree in [Artificial Intelligence](https://ai.yonsei.ac.kr/eng/index.php) from [Yonsei University](https://www.yonsei.ac.kr/en_sc/index.jsp)
 under the supervision of Prof. [Jonghyun Choi](http://ppolon.github.io/)
-and a B.S. degree in [Mechanical Engineering](https://me.yonsei.ac.kr/me_en/index.do) from same university.
+and a B.S. degree in [Mechanical Engineering](https://me.yonsei.ac.kr/me_en/index.do) from the same university.
 
 My current interest lies in embodied AI, encompassing machine learning, computer vision, and NLP. My long-term vision centers around the seamless integration of artificial intelligence, robotics and mechanical engineering; to solve real-world problems.
 
@@ -27,7 +27,7 @@ Educations
 
 Work Experience
 ======
-* Samsung Electronics, Robot Business team (2022 ~ 2023)
+* Samsung Electronics, Robot Business team (2022 - 2023)
   * Professional, Mechanical engineer
 * Samsung Electronics, Mobile Division (2021 Summer)
   * Summer Internship, Mechanical engineer
