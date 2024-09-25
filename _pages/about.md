@@ -61,7 +61,7 @@ Award
 ======
 * Generalist Language Grounding Agents Challenge 1st Place
   *   Embodied AI Workshop @ CVPR 2023 [Link](https://askforalfred.com/EAI23/)
-* Best Paper Award (우수논문상 은상)
+* Outstanding Paper Award (우수논문상 은상)
   *   IPIU 2024 [Link](http://to-be-appeared)
 * Academic Award
   * Yonsei University ('19, '20, '21, '22)
