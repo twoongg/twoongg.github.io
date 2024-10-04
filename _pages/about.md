@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a Ph.D. student in the department of Electrical and Computer Engineering at [SNU Machine Perception and Reasoning Lab](https://snumprlab.github.io/) at [Seoul National University](https://en.snu.ac.kr/) advised by Prof. [Jonghyun Choi](http://ppolon.github.io/). Before joining this group, I worked at [Samsung Electronics](https://www.samsung.com/us/) as a mechanical engineer.
+I am a Research Assistant in the department of Electrical and Computer Engineering at [SNU Machine Perception and Reasoning Lab](https://snumprlab.github.io/) at [Seoul National University](https://en.snu.ac.kr/) advised by Prof. [Jonghyun Choi](http://ppolon.github.io/). Before joining this group, I worked at [Samsung Electronics](https://www.samsung.com/us/) as a mechanical engineer.
 
 I received an M.S. degree in [Artificial Intelligence](https://ai.yonsei.ac.kr/eng/index.php) from [Yonsei University](https://www.yonsei.ac.kr/en_sc/index.jsp)
 under the supervision of Prof. [Jonghyun Choi](http://ppolon.github.io/)
