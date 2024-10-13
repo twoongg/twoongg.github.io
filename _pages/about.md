@@ -22,7 +22,7 @@ Embodied AI, computer vision, multi-modal learning
 
 Educations
 ======
-* Ph.D. Student in Electrical and Computer Engineering, Seoul National University, 2024 - _Current_
+* (tentative) Ph.D. Student in Electrical and Computer Engineering, Seoul National University, 2024 - _Current_
 * M.S. in Artificial Intelligence, Yonsei University, 2024
 * B.S. in Mechanical Engineering, Yonsei University, 2022
 
