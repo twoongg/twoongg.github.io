@@ -1,5 +1,5 @@
 # main links links
-#main:
+main:
 #  - title: "Publications"
 #    url: /publications/
 
@@ -17,6 +17,7 @@
     
  - title: "CV"
    url: /file/CV.pdf
+   class: "rightmost-link"
     
 #  - title: "Guide"
 #    url: /markdown/
