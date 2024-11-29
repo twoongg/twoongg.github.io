@@ -16,7 +16,7 @@ main:
 #    url: /year-archive/
     
  - title: "CV"
-   url: /file/CV.pdf
+   url: /files/CV.pdf
    class: "rightmost-link"
     
 #  - title: "Guide"
