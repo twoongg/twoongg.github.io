@@ -18,7 +18,7 @@ My current interest lies in embodied AI, encompassing machine learning, computer
 
 Research Interest
 ======
-Embodied AI, computer vision, multi-modal learning
+Embodied AI, multimodal learning, few-shot/zero-shot learning, reinforcement learning
 
 Educations
 ======
@@ -32,6 +32,14 @@ Work Experience
   * Professional, Mechanical engineer
 * Samsung Electronics, Mobile Division (2021 Summer)
   * Summer Internship, Mechanical engineer
+
+Working Papers
+======
+- **A paper about zero-shot affordance grounding using GenAI** \
+_Under review_
+
+- **A paper about grounded planning for an embodied agent** \
+_under review_
 
 Publication
 ======
@@ -61,7 +69,7 @@ Award
 ======
 * Generalist Language Grounding Agents Challenge 1st Place
   *   Embodied AI Workshop @ CVPR 2023 [Link](https://askforalfred.com/EAI23/)
-* Outstanding Paper Award (우수논문상 은상)
+* Outstanding Paper Award (Silver Prize) (우수논문상 은상)
   *   IPIU 2024 [Link](http://to-be-appeared)
 * Academic Award
   * Yonsei University ('19, '20, '21, '22)
