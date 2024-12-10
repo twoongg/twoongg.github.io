@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!--<script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>-->
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Multi-Modal Grounded Planning and Efficient Replanning For Learning Embodied Agents with A Few Examples">
+  <meta name="keywords" content="Embodied AI">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Multi-Modal Grounded Planning and Efficient Replanning For Learning Embodied Agents with A Few Examples</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BWYESK2L9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-9BWYESK2L9');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://twoongg.github.io">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://twoongg.github.io/projects/realfred/">
+            ReALFRED
+          </a>
+          <a class="navbar-item" href="https://bhkim94.github.io/projects/CL-ALFRED">
+            CL-ALFRED
+          </a>
+          <a class="navbar-item" href="https://bhkim94.github.io/projects/CAPEAM">
+            CAPEAM
+          </a>
+          <a class="navbar-item" href="https://bhkim94.github.io/projects/MCR-Agent">
+            MCR-Agent
+          </a>
+          <a class="navbar-item" href="https://bhkim94.github.io/projects/ABP">
+            ABP
+          </a>
+          <a class="navbar-item" href="https://bhkim94.github.io/projects/MOCA">
+            MOCA
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered is-full-width">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title" style="font-size:45px">
+            Multi-Modal Grounded Planning and Efficient Replanning For Learning Embodied Agents with A Few Examples
+          </h1>
+          <h1 class="title is-4 publication-title">
+            AAAI 2025 (to appear)
+          </h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://twoongg.github.io">Taewoong Kim</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://bhkim94.github.io">Byeonghwi Kim</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://ppolon.github.io">Jonghyun Choi</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Seoul National University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://to appear"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper (to appear)</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://to appear"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv (to appear)</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/snumprlab/flare"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Learning a perception and reasoning module for robotic assistants to plan steps to perform complex tasks based on natural language instructions often requires large free-form language annotations, especially for short high-level instructions. To reduce the cost of annotation, large language models (LLMs) are used as a planner with few data. However, when elaborating the steps, even the state-of-the-art planner that uses LLMs mostly relies on linguistic common sense, often neglecting the status of the environment at command reception, resulting in inappropriate plans. To generate plans grounded in the environment, we propose FLARE (Few-shot Language with environmental Adaptive Replanning Embodied agent), which improves task planning using both language command and environmental perception. As language instructions often contain ambiguities or incorrect expressions, we additionally propose to correct the mistakes using visual cues from the agent. The proposed scheme allows us to use a few language pairs thanks to the visual cues and significantly outperforms state-of-the-art approaches (by twice the success rate in unseen environments of the ALFRED benchmark: 16.42% → 40.88%).
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Under construction</h2>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{kim2024flare,
+  author    = {Kim, Taewoong and Kim, Byeonghwi and Choi, Jonghyun},
+  title     = {Multi-Modal Grounded Planning and Efficient Replanning For Learning Embodied Agents with A Few Examples},
+  booktitle = {AAAI},
+  year      = {2025},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          The website template is from <a href="https://github.com/nerfies/nerfies.github.io">here</a>.
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+</body>
+</html>

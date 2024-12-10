@@ -29,7 +29,7 @@ Educations
 Work Experience
 ======
 * Samsung Electronics, Robot Business team (2022 - 2023)
-  * Professional, Mechanical engineer
+  * Full-time, Mechanical engineer
 * Samsung Electronics, Mobile Division (2021 Summer)
   * Summer Internship, Mechanical engineer
 
@@ -38,23 +38,21 @@ Working Papers
 - **A paper about zero-shot affordance grounding using GenAI** \
 _Under review_
 
-- **A paper about grounded planning for an embodied agent** \
-_under review_
 
 Publication
 ======
+**2025**
+- **Multi-Modal Grounded Planning and Efficient Replanning For Learning Embodied Agents with A Few Examples**  \
+**Taewoong Kim**, [Byeonghwi Kim](https://bhkim94.github.io/), and [Jonghyun Choi](http://ppolon.github.io/)  
+_AAAI 2025 (to appear) [Link](https://aaai.org/conference/aaai/aaai-25/)_  
+[[Proejct page]](https://twoongg.github.io/projects/flare/) [[paper]](https://to-appear) [[code]](https://github.com/snumprlab/flare)
+
+
 **2024**
 - **ReALFRED: An Embodied Instruction Following Benchmark in Photo-Realistic Environment**  \
 **Taewoong Kim**, [Cheolhong Min](https://mch0916.github.io/), [Byeonghwi Kim](https://bhkim94.github.io/), [Jinyeon Kim](http://jinyeonkim.notion.site), [Wonje Jeung](https://cryinginitial.github.io/), and [Jonghyun Choi](http://ppolon.github.io/)  
-_ECCV 2024_  
+_ECCV 2024 [Link](https://eccv2024.ecva.net/)_  
 [[Proejct page]](https://twoongg.github.io/projects/realfred/) [[paper]](https://arxiv.org/abs/2407.18550) [[code]](https://github.com/snumprlab/realfred)
-
-
-<!-- - **Multi-Modal Grounded Planning and Efficient Replanning For Learning Embodied Agents with A Few Examples**  \ -->
-- **데이터 부족 환경에서의 다중 모달 기반 계획 및 효율적인 재계획을 수립하는 에이전트 (Kor)**  \
-**Taewoong Kim**, [Byeonghwi Kim](https://bhkim94.github.io/), and [Jonghyun Choi](http://ppolon.github.io/)  
-_Workshop on Image Processing and Image Understanding (IPIU 2024) [Link](http://www.ipiu.or.kr/)_  
-[[paper]](http://to-be-appeared) [[code]](http://to-be-appeared)
 
 
 **2023**
@@ -70,7 +68,7 @@ Award
 * Generalist Language Grounding Agents Challenge 1st Place
   *   Embodied AI Workshop @ CVPR 2023 [Link](https://askforalfred.com/EAI23/)
 * Outstanding Paper Award (Silver Prize) (우수논문상 은상)
-  *   IPIU 2024 [Link](http://to-be-appeared)
+  *   IPIU 2024 [Link](http://ipiu2024.ipiu.or.kr/)
 * Academic Award
   * Yonsei University ('19, '20, '21, '22)
 
