@@ -16,9 +16,16 @@ and a B.S. degree in [Mechanical Engineering](https://me.yonsei.ac.kr/me_en/inde
 
 My current interest lies in embodied AI, encompassing machine learning, computer vision, and NLP. My long-term vision centers around the seamless integration of artificial intelligence, robotics and mechanical engineering; to solve real-world problems.
 
-Research Interest
+<!-- Research Interest
 ======
-Embodied AI, multimodal learning, few-shot/zero-shot learning, reinforcement learning
+Embodied AI, multimodal learning, few-shot/zero-shot learning, reinforcement learning -->
+
+Summary Statement
+======
+* **Embodied AI** researcher advancing real-world capabilities through advanced perception and reasoning.
+* Focused on **data-efficient** interaction through few-shot planning and zero-shot affordance learning.
+* Strong mechanical engineering foundation for developing **practical intelligent robotic** systems.
+
 
 Educations
 ======
