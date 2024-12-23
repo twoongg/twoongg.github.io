@@ -160,7 +160,16 @@
   </div>
 </section>
 
-
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src='static/figures/teaser.png' style="margin-left: auto; margin-right: auto; display: block; border-style: none width:70%;max-width:70%">
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Few-shot Language with environmental Adaptive Replanning Embodied agent (FLARE)</span>
+      </h2>
+    </div>
+  </div>
+</section>
 
 
 <section class="hero is-light is-small">
@@ -172,7 +181,7 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Learning a perception and reasoning module for robotic assistants to plan steps to perform complex tasks based on natural language instructions often requires large free-form language annotations, especially for short high-level instructions. To reduce the cost of annotation, large language models (LLMs) are used as a planner with few data. However, when elaborating the steps, even the state-of-the-art planner that uses LLMs mostly relies on linguistic common sense, often neglecting the status of the environment at command reception, resulting in inappropriate plans. To generate plans grounded in the environment, we propose FLARE (Few-shot Language with environmental Adaptive Replanning Embodied agent), which improves task planning using both language command and environmental perception. As language instructions often contain ambiguities or incorrect expressions, we additionally propose to correct the mistakes using visual cues from the agent. The proposed scheme allows us to use a few language pairs thanks to the visual cues and significantly outperforms state-of-the-art approaches (by twice the success rate in unseen environments of the ALFRED benchmark: 16.42% → 40.88%).
+              Learning a perception and reasoning module for robotic assistants to plan steps to perform complex tasks based on natural language instructions often requires large free-form language annotations, especially for short high-level instructions. To reduce the cost of annotation, large language models (LLMs) are used as a planner with few data. However, when elaborating the steps, even the state-of-the-art planner that uses LLMs mostly relies on linguistic common sense, often neglecting the status of the environment at command reception, resulting in inappropriate plans. To generate plans grounded in the environment, we propose FLARE (Few-shot Language with environmental Adaptive Replanning Embodied agent), which improves task planning using both language command and environmental perception. As language instructions often contain ambiguities or incorrect expressions, we additionally propose to correct the mistakes using visual cues from the agent. The proposed scheme allows us to use a few language pairs thanks to the visual cues and outperforms state-of-the-art approaches. Our code is available at https://github.com/snumprlab/flare.
             </p>
           </div>
         </div>
@@ -189,7 +198,95 @@
 
 
 
+<section class="section">
+  <div class="container is-max-widescreen">
+    <h2 class="title is-3">Few-shot Language with Environmental Adaptive Replanning Embodied Agent</h2>
+    <div class="content has-text-justified">
+      <p>
+        The state-of-the-art embodied agent requires extensive data annotation and often generates ungrounded or impractical plans due to language ambiguity.
+        To address these issues, we propose FLARE, which combines <b>visual and language</b> inputs to generate executable plans, and <b>adaptively updates</b> plans based on visual observations of the environment.
+      <p>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <img src="static/figures/architecture.png">
+        </div>
+      </div>
+    </div>
 
+
+    <h3 class="title is-4">Multi-Modal Planner</h3>
+      <div class="columns is-centered">
+        <div class="column is-two-quarters">
+          <div class="content has-text-justified">
+            <p>
+              To generate plans using LLMs, previous works only considered linguistic similarity between tasks when selecting relevant examples for few-shot learning. Our Multi-Modal Planner improves upon this by considering both language instruction and visual observations to find more contextually appropriate examples, ensuring the generated plans are grounded in the current environment state.
+            </p>
+            <p>
+              To efficiently represent task sequences, we structure each subgoal as a triplet of [Action, Object, Location]. This compact representation reduces the total instruction length while maintaining all necessary information for task execution.
+            </p>
+          </div>
+        </div>
+        <div class="column is-two-quarter">
+          <img src='static/figures/MMP.png' style="margin-left: auto; margin-right: auto; display: block; border-style: none width:100%;max-width:100%">
+        </div>
+      </div>
+
+    <h3 class="title is-4">Environment Adaptive Replanning</h3>
+      <div class="columns is-centered">
+        <div class="column is-two-quarters">
+          <div class="content has-text-justified">
+            <p>
+              Even with LLM-based planning, agents often fail when encountering objects they haven't learned during training, due to language variations (e.g., "couch" vs "sofa"). Our Environment Adaptive Replanning addresses this by monitoring and maintaining a list of all detected objects during task execution.
+            </p>
+            <p>
+              When the agent fails to find a target object, EAR automatically identifies and substitutes it with the most semantically similar object from the observed list, using language-based similarity measurements between object names. This enables the agent to adapt its plans in real-time and continue task execution even with unfamiliar objects.
+            </p>
+          </div>
+        </div>
+        <div class="column is-two-quarter">
+          <img src='static/figures/EAR.png' style="margin-left: auto; margin-right: auto; display: block; border-style: none width:100%;max-width:100%">
+        </div>
+      </div>
+  </div>
+
+</section>
+
+
+
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3">Results</h2>
+      <div class="content has-text-justified">
+        <p>
+          We evaluate the effectiveness of our FLARE in the <span style="color: #305fac"><a href="https://askforalfred.com/">ALFRED</a></span> benchmark. It requires agents
+          to complete household tasks based on language instructions and egocentric observations within interactive 3D environments.
+          Both validation and test sets include seen and unseen scenarios, where the seen scenario is part of the training data, while the unseen scenario represents a new and unfamiliar environment for evaluation.
+          To evaluate the efficiency of FLARE where human language pairs are scarce, we followed the same few-shot
+          setting(0.5%) as in the previous work, <span style="color: #305fac"><a href="https://dki-lab.github.io/LLM-Planner/">LLM-Planner</a></span>.
+          For a fair comparison with the previous methods, we use the
+          same number of examples work, LLM-Planner (<em>i.e.</em>, 100 examples). The selected 100 examples contain all 7 task types
+          for fair representations of 21,023 training examples.
+          For evaluation, we follow the same evaluation protocol as
+          ALFRED. The primary metric is a success rate
+          (SR), measuring the percentage of completed tasks. A goalcondition success rate (GC) measures the percentage of satisfied goal conditions. Furthermore, we assess the efficiency
+          of agents penalizing SR and GC (<em>i.e.</em>, PLWSR and PLWGC)
+          with the path length of a trajectory taken by the agents.
+        <p>
+        <p>
+          For more details, please check out the paper.
+        </p>
+        <br>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full-width">
+            <img src="static/tables/results.png">
+            <h5>Comparison with state-of-the-art methods</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 
