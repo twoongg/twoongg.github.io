@@ -20,6 +20,11 @@ My current interest lies in embodied AI, encompassing machine learning, computer
 ======
 Embodied AI, multimodal learning, few-shot/zero-shot learning, reinforcement learning -->
 
+News
+======
+Feb. 2025: I received the **Outstanding Graduate Thesis Award** from Yonsei University for my Master's thesis!
+
+
 Summary Statement
 ======
 * **Embodied AI** researcher advancing real-world capabilities through advanced perception and reasoning.
