@@ -22,7 +22,7 @@ Embodied AI, multimodal learning, few-shot/zero-shot learning, reinforcement lea
 
 News
 ======
-Feb. 2025: I received the **Outstanding Graduate Thesis Award** from Yonsei University for my Master's thesis!
+- Feb. 2025: I received the **Innovative Graduate Thesis Award** from Yonsei University for my Master's thesis!
 
 
 Summary Statement
@@ -56,7 +56,7 @@ Publication
 **2025**
 - **Multi-Modal Grounded Planning and Efficient Replanning For Learning Embodied Agents with A Few Examples**  \
 **Taewoong Kim**, [Byeonghwi Kim](https://bhkim94.github.io/), and [Jonghyun Choi](http://ppolon.github.io/)  
-_AAAI 2025 (to appear) [Link](https://aaai.org/conference/aaai/aaai-25/)_  
+_AAAI 2025 [Link](https://aaai.org/conference/aaai/aaai-25/)_  
 [[Proejct page]](https://twoongg.github.io/projects/flare/) [[paper]](https://arxiv.org/abs/2412.17288) [[code]](https://github.com/snumprlab/flare)
 
 
@@ -77,11 +77,15 @@ _Learning by Asking for Intelligent Robots and Agents (LA4IRA) @ IEEE-ROMAN 2023
 
 Award
 ======
+* Innovative Graduate Thesis Award
+  *   Yonsei University
+* Outstanding Paper Award (Golden Prize) (우수논문상 금상)
+  *   IPIU 2025 [Link](http://ipiu2025.ipiu.or.kr/)
 * Generalist Language Grounding Agents Challenge 1st Place
   *   Embodied AI Workshop @ CVPR 2023 [Link](https://askforalfred.com/EAI23/)
 * Outstanding Paper Award (Silver Prize) (우수논문상 은상)
   *   IPIU 2024 [Link](http://ipiu2024.ipiu.or.kr/)
-* Academic Award
+* Academic Award/Scholarship
   * Yonsei University ('19, '20, '21, '22)
 
 
