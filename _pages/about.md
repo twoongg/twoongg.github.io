@@ -54,7 +54,7 @@ _Under review_
 Publication
 ======
 **2025**
-- **Multi-Modal Grounded Planning and Efficient Replanning For Learning Embodied Agents with A Few Examples**  \
+- **Multi-Modal Grounded Planning and Efficient Replanning For Learning Embodied Agents with a Few Examples**  \
 **Taewoong Kim**, [Byeonghwi Kim](https://bhkim94.github.io/), and [Jonghyun Choi](http://ppolon.github.io/)  
 _AAAI 2025 (<font color="red"><b>Oral</b></font>) [Link](https://aaai.org/conference/aaai/aaai-25/)_  
 [[Proejct page]](https://twoongg.github.io/projects/flare/) [[paper]](https://arxiv.org/abs/2412.17288) [[code]](https://github.com/snumprlab/flare)
