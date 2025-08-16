@@ -93,7 +93,7 @@ Award
 
 Academic Services
 ======
-* Reviewer (RO-MAN'24)
+* Reviewer (ICCV'25, RO-MAN'24)
 
 
 <!-- Default Statcounter code for Main Bio
