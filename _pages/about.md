@@ -8,21 +8,21 @@ redirect_from:
   - /about.html
 ---
 
-I am AI researcher specialized on embodied agent and large models. Previously, I was a Research Assistant in the department of Electrical and Computer Engineering at [SNU Machine Perception and Reasoning Lab](https://snumprlab.github.io/) at [Seoul National University](https://en.snu.ac.kr/) advised by Prof. [Jonghyun Choi](http://ppolon.github.io/). Before joining this group, I worked at [Samsung Electronics](https://www.samsung.com/us/) as a mechanical engineer.
+I'm an incoming AI Research Engineer at [Samsung Research](https://research.samsung.com/). My research background is in embodied agents and large models, which I specialized in as a Research Assistant at the [SNU Machine Perception and Reasoning Lab](https://snumprlab.github.io/) at [Seoul National University](https://en.snu.ac.kr/) advised by Prof. [Jonghyun Choi](http://ppolon.github.io/). Prior to that, I worked as a mechanical engineer at [Samsung Electronics](https://www.samsung.com/us/).
 
 I received an M.S. degree in [Artificial Intelligence](https://ai.yonsei.ac.kr/eng/index.php) from [Yonsei University](https://www.yonsei.ac.kr/en_sc/index.jsp)
 under the supervision of Prof. [Jonghyun Choi](http://ppolon.github.io/)
 and a B.S. degree in [Mechanical Engineering](https://me.yonsei.ac.kr/me_en/index.do) from the same university.
 
-My current interest lies in embodied AI, encompassing machine learning, computer vision, and NLP. My long-term vision centers around the seamless integration of artificial intelligence, robotics and mechanical engineering; to solve real-world problems.
+<!-- My current interest lies in embodied AI, encompassing machine learning, computer vision, and NLP. My long-term vision centers around the seamless integration of artificial intelligence, robotics and mechanical engineering; to solve real-world problems. -->
 
 <!-- Research Interest
 ======
 Embodied AI, multimodal learning, few-shot/zero-shot learning, reinforcement learning -->
 
-News
+<!-- News
 ======
-- Feb. 2025: I received the **Innovative Graduate Thesis Award** from Yonsei University for my Master's thesis!
+- Feb. 2025: I received the **Innovative Graduate Thesis Award** from Yonsei University for my Master's thesis! -->
 
 
 Summary Statement
@@ -40,6 +40,8 @@ Educations
 
 Work Experience
 ======
+* Samsung Electronics, Samsung Research (2025 - current)
+  * Full-time, AI Research Engineer
 * Samsung Electronics, Robot Business team (2022 - 2023)
   * Full-time, Mechanical engineer
 * Samsung Electronics, Mobile Division (2021 Summer)
