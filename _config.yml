@@ -82,12 +82,12 @@ analytics:
 author:
   name             : "김태웅 (Taewoong Kim)"
   avatar           : "profile.png"
-  bio              : "Research Assistant at SNU"
+  bio              : "AI Research Enginner @ Samsung Research"
   location         : "Seoul"
   employer         :
 #  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : "https://scholar.google.com/citations?hl=en&user=uuALoRMAAAAJ"
-  email            : "twoongg.kim@snu.ac.kr"
+  email            : "twoongg.kim@yonsei.ac.kr"
   researchgate     :  # example: "https://www.researchgate.net/"
   uri              :
   bitbucket        :
