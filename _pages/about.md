@@ -25,7 +25,7 @@ Embodied AI, multimodal learning, few-shot/zero-shot learning, reinforcement lea
 - Feb. 2025: I received the **Innovative Graduate Thesis Award** from Yonsei University for my Master's thesis! -->
 
 
-Summary Statement
+<!-- Summary Statement
 ======
 * **Embodied AI** researcher advancing real-world capabilities through advanced perception and reasoning.
 * Focused on **data-efficient** interaction through few-shot planning and zero-shot affordance learning.
@@ -34,7 +34,7 @@ Summary Statement
 
 Educations
 ======
-<!-- * (tentative) Ph.D. Student in Electrical and Computer Engineering, Seoul National University, 2024 - _Current_ -->
+* (tentative) Ph.D. Student in Electrical and Computer Engineering, Seoul National University, 2024 - _Current_
 * M.S. in Artificial Intelligence, Yonsei University, 2024
 * B.S. in Mechanical Engineering, Yonsei University, 2022
 
@@ -93,7 +93,7 @@ Award
 
 Academic Services
 ======
-* Reviewer (ICCV'25, RO-MAN'24)
+* Reviewer (ICCV'25, RO-MAN'24) -->
 
 
 <!-- Default Statcounter code for Main Bio
