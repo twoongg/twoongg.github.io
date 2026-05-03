@@ -1030,7 +1030,8 @@
         $(document).ready(function (e) {
             var _image = $('meta[property="og:image"]').attr('content');
 
-            Kakao.init('15a0809a476376258d2e1d91343d4746');
+            // 김태웅님의 JavaScript 키로 초기화
+            Kakao.init('0c28c6481f41bfafb8d1eaad32dcba29');
 
             if (_image == null || _image.length == 0) {
                 $("#kakao-link-btn").parent().hide();
@@ -1047,10 +1048,12 @@
         }
 
         function shareMessage() {
-            var _url = $('meta[property="og:url"]').attr('content');
+            // 실제 배포된 사이트 주소
+            var _url = 'https://twoongg.github.io/mobile-wedding-invitation/index.html';
             var _title = $('meta[property="og:title"]').attr('content');
             var _desc = $('meta[property="og:description"]').attr('content');
-            var _image = $('meta[property="og:image"]').attr('content');
+            // 이미지는 카카오 서버에서 접근 가능하도록 절대 경로로 설정
+            var _image = 'https://twoongg.github.io/mobile-wedding-invitation/upload/images/kakao_share.jpg';
             var _imgWidth = $('meta[property="og:image:width"]').attr('content');
             var _imgHeight = $('meta[property="og:image:height"]').attr('content');
             var _eventDateTime = $("#eventDateTime").val();
