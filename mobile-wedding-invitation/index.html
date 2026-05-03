@@ -17,6 +17,31 @@
     <meta property="og:description" content="저희 두 사람의 결혼식에 초대합니다." />
 
     <title>모바일 청첩장</title>
+    <!-- 다크모드 강제 방지 -->
+    <meta name="color-scheme" content="light only">
+    <meta name="supported-color-schemes" content="light">
+    <style>
+        /* 시스템 다크모드 설정 무시 */
+        :root {
+            color-scheme: light;
+        }
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #ffffff !important;
+                color: #333333 !important;
+            }
+            /* 기타 다크모드에서 변할 수 있는 요소들 강제 고정 */
+            #wrap {
+                background-color: #ffffff !important;
+            }
+            .templatearea {
+                background-color: inherit !important;
+            }
+            .text, p, span, dl, dt, dd {
+                color: inherit !important;
+            }
+        }
+    </style>
     <link rel="stylesheet" type="text/css" href="css/extra_font.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/loader.css">
@@ -885,7 +910,7 @@
             <input type="hidden" id="url" value="https://mcard.barunsoncard.com/m/" />
             <ul class="sns_list">
                     <li><a href="javascript:addToCalendar();"><img src="img/icons/register_calendar.svg" alt="일정 등록"></a></li>
-                <li><a href="index.html" class="copy_url"><img src="img/icons/copy_link.svg" alt="링크복사"></a></li>
+                <li><a href="javascript:copyInvitationLink();"><img src="img/icons/copy_link.svg" alt="링크복사"></a></li>
                 
                     <li><a href="javascript:shareMessage();" id="kakao-link-btn"><img src="img/icons/share_kakao.svg" alt="카카오톡"></a></li>
             </ul>
@@ -1026,91 +1051,54 @@
 
         </script>
     <script type="text/javascript">
+        // 김태웅님의 JavaScript 키로 즉시 초기화
+        try {
+            Kakao.init('0c28c6481f41bfafb8d1eaad32dcba29');
+        } catch (e) {
+            console.error('Kakao init error:', e);
+        }
 
         $(document).ready(function (e) {
             var _image = $('meta[property="og:image"]').attr('content');
-
-            // 김태웅님의 JavaScript 키로 초기화
-            Kakao.init('0c28c6481f41bfafb8d1eaad32dcba29');
-
             if (_image == null || _image.length == 0) {
                 $("#kakao-link-btn").parent().hide();
             }
         });
 
         function startNavigation(address, x, y) {
-            Kakao.Navi.start({
-                name: address,
-                x: x,
-                y: y,
-                coordType: 'wgs84'
-            });
+            try {
+                Kakao.Navi.start({
+                    name: address,
+                    x: x,
+                    y: y,
+                    coordType: 'wgs84'
+                });
+            } catch (e) {
+                alert('네비게이션 실행 중 오류가 발생했습니다.');
+            }
         }
 
         function shareMessage() {
-            // 실제 배포된 사이트 주소
-            var _url = 'https://twoongg.github.io/mobile-wedding-invitation/index.html';
-            var _title = $('meta[property="og:title"]').attr('content');
-            var _desc = $('meta[property="og:description"]').attr('content');
-            // 이미지는 카카오 서버에서 접근 가능하도록 절대 경로로 설정
-            var _image = 'https://twoongg.github.io/mobile-wedding-invitation/upload/images/kakao_share.jpg';
-            var _imgWidth = $('meta[property="og:image:width"]').attr('content');
-            var _imgHeight = $('meta[property="og:image:height"]').attr('content');
-            var _eventDateTime = $("#eventDateTime").val();
-            var _addressDetail = $("#addressDetail").text();
+            try {
+                if (!Kakao.isInitialized()) {
+                    Kakao.init('0c28c6481f41bfafb8d1eaad32dcba29');
+                }
+                
+                // 실제 배포된 사이트 주소
+                var _url = 'https://twoongg.github.io/mobile-wedding-invitation/index.html';
+                var _title = $('meta[property="og:title"]').attr('content') || '모바일 청첩장';
+                var _desc = $('meta[property="og:description"]').attr('content') || '저희 두 사람의 결혼식에 초대합니다.';
+                // 이미지는 카카오 서버에서 접근 가능하도록 절대 경로로 설정
+                var _image = 'https://twoongg.github.io/mobile-wedding-invitation/upload/images/kakao_share.jpg';
+                var _imgWidth = 800;
+                var _imgHeight = 800;
+                var _eventDateTime = $("#eventDateTime").val() || "";
 
-            var lat = $('.map_btn').data('lat');
-            var lng = $('.map_btn').data('lng');
-            var loc = $('.map_btn').data('name');
+                var kakaoDesc = _desc;
+                if (_eventDateTime && _eventDateTime.length > 0) {
+                    kakaoDesc = _eventDateTime + "\n" + _desc;
+                }
 
-            var params = [];
-            params.push('lat='+lat);
-            params.push('lot='+lng);
-            params.push('name='+loc);
-
-            var mapUrl = window.location.originm2/mapredirect?' + params.join('&');
-
-            var kakaoDesc = _desc;
-            if (_eventDateTime.length > 0) {
-                kakaoDesc = _eventDateTime + "\n" + _desc;
-            }
-
-            if (_addressDetail != null && _addressDetail.length > 0 && $('iframe#map').length > 0) {
-                Kakao.Share.sendDefault({
-                    objectType: 'feed',         // 카카오톡 링크 타입
-                    content: {
-                        title: _title,              // 타이틀
-                        description: kakaoDesc,
-                        imageUrl: _image,           // 이미지
-                        link: {
-                            mobileWebUrl: _url,     // 모바일 주소
-                            webUrl: _url            // 웹 주소
-                        },
-                        imageWidth: parseInt(_imgWidth == null ? 0 : _imgWidth),
-                        imageHeight: parseInt(_imgHeight == null ? 0 : _imgWidth)
-                    },
-                    social: {
-                    },
-                    buttons: [
-                        {
-                            title: '자세히 보기',
-                            link: {
-                                mobileWebUrl: _url,
-                                webUrl: _url
-                            }
-                        },
-                        {
-                            title: '위치 보기',
-                            link: {
-                                mobileWebUrl: mapUrl,
-                                webUrl: mapUrl
-                            }
-                        },
-                    ]
-
-                });
-                //공유할 예식장 주소가 없으면
-            } else {
                 Kakao.Share.sendDefault({
                     objectType: 'feed',
                     content: {
@@ -1119,21 +1107,43 @@
                         imageUrl: _image,
                         link: {
                             mobileWebUrl: _url,
-                            webUrl: _url,
+                            webUrl: _url
                         },
-                        imageWidth: parseInt(_imgWidth == null ? 0 : _imgWidth),
-                        imageHeight: parseInt(_imgHeight == null ? 0 : _imgWidth)
+                        imageWidth: _imgWidth,
+                        imageHeight: _imgHeight
                     },
                     buttons: [
                         {
                             title: '자세히 보기',
                             link: {
                                 mobileWebUrl: _url,
-                                webUrl: _url,
-                            },
+                                webUrl: _url
+                            }
                         }
-                    ],
+                    ]
                 });
+            } catch (e) {
+                console.error('Kakao share error:', e);
+                alert('카카오톡 공유를 실행할 수 없습니다.');
+            }
+        }
+
+        // 링크 복사 기능을 index.html에 직접 구현 (js/m2page.js의 간섭 방지)
+        function copyInvitationLink() {
+            var url = 'https://twoongg.github.io/mobile-wedding-invitation/index.html';
+            var aux = document.createElement("textarea");
+            aux.value = url;
+            document.body.appendChild(aux);
+            aux.select();
+            aux.setSelectionRange(0, 9999);
+            document.execCommand("copy");
+            document.body.removeChild(aux);
+            
+            // 토스트 팝업 (기존 함수 재사용)
+            if (typeof toastPopup === 'function') {
+                toastPopup('주소가 복사되었습니다.', 1500);
+            } else {
+                alert('주소가 복사되었습니다.');
             }
         }
     </script>
