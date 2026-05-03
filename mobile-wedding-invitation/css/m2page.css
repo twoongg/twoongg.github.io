@@ -1,0 +1,318 @@
+﻿body {
+width: 100%;
+}
+#wrap {
+max-width: 800px;
+margin: 0 auto;
+min-width: 320px;
+min-height: 100px;
+overflow: hidden;
+}
+.templatearea {
+width: 100%;
+height: 0px;
+position: relative;
+letter-spacing: 0px;
+}
+
+.item {
+display: flex;
+}
+
+.text {
+width: 100%;
+}
+
+.area .map_wrap iframe {
+width: 100% !important;
+height: 150px !important;
+box-sizing: border-box;
+}
+
+.photo {
+display: flex;
+flex-wrap: wrap;
+flex-direction: column; /*수직 정렬*/
+align-items: center;
+justify-content: center;
+}
+
+.mapImg {
+width: 100% !important;
+height: auto !important;
+}
+
+
+
+.iframe_wrap iframe {
+width: 100% !important;
+height: 100% !important;
+}
+
+.etcarea {
+width: 100%;
+height: 100%;
+position: relative;
+letter-spacing: 0px;
+}
+.etcarea .etc_info {
+    margin: 20px 3% 0;
+    padding-bottom:60px;
+    border-bottom: 1px solid #ddd;
+}
+
+.etcarea li {
+display: flex;
+flex-direction: column;
+}
+
+.etcarea li:not(:last-child) {
+    margin-bottom:16px;
+}
+
+.etcarea li strong {
+    font-size: 15px;
+    color:#333;
+    letter-spacing:-0.38px;
+    margin-bottom:8px;
+}
+.etcarea li span {
+    font-size:14px;
+    line-height:20px;
+    letter-spacing:-0.35px;
+    word-break:keep-all;
+}
+
+
+.d_day {
+display: none;
+}
+
+.dvfooter img {
+width: 100%;
+}
+
+
+/** 계좌번호 신규추가 2021.10.14 **/
+.scroll_off {
+height: 100%;
+min-height: 100%;
+overflow: hidden !important;
+
+}
+
+/* 계좌번호보기 팝업 */
+.account_pop {
+display: none;
+position: fixed;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+z-index: 100;
+text-align: center;
+}
+
+.account_pop:before {
+content: "";
+display: inline-block;
+height: 100%;
+vertical-align: middle;
+}
+
+.account_pop .layer_pop {
+position: relative;
+display: inline-block;
+vertical-align: middle;
+max-width: 450px;
+width: 90%;
+height: auto;
+background: #fff;
+z-index: 1000;
+padding: 0 20px;
+border: 1px solid #ebebeb;
+box-sizing: border-box;
+margin: auto;
+text-align: left;
+}
+
+.account_pop .layer_pop .account_list {
+max-height: 480px;
+overflow-y: auto;
+padding: 24px 10px 0;
+}
+
+.account_pop .layer_pop .account_list .mCSB_scrollTools {
+width: 4px;
+}
+
+.account_pop .layer_pop .account_list .mCSB_scrollTools .mCSB_draggerRail {
+background: #f1f1f1;
+}
+
+.account_pop .layer_pop .account_list .mCSB_scrollTools .mCSB_dragger_bar {
+background: #ccc;
+}
+
+.account_pop .layer_pop .account_list .mCSB_container {
+margin-right: 0;
+}
+
+.account_pop .layer_pop .account_list.add_scroll {
+padding: 24px 0 0 10px;
+}
+
+.account_pop .layer_pop .account_list.add_scroll .mCSB_container {
+margin-right: 16px;
+}
+
+.account_pop .layer_pop dl:not(:first-child){
+    margin-top:20px;
+}
+
+.account_pop .layer_pop dl dt {
+    position: relative;
+    font-size: 16px !important;
+    line-height: 24px;
+    border-bottom: 1px solid #ebebeb;
+    margin-bottom: 7px;
+    padding-bottom: 7px;
+    font-family: "Spoqa Han Sans Neo", sans-serif;
+    color: #333;
+    font-weight:bold;
+    letter-spacing:normal;
+}
+
+.account_pop .layer_pop dl dd .copy_btn {
+    color: #fff;
+    background-color: #333;
+}
+.account_pop .layer_pop dl dd .card_btn {
+     color: #333;
+     border: 1px solid #333;
+}
+
+.account_pop .layer_pop dl dd .kakao_btn {
+    background: #fee500;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color: #333;
+}
+
+.account_pop .layer_pop dl dd .kakao_btn::before {
+    content:'';
+    background: url(../img/order/kakako_icon.png) no-repeat center;
+    width:18px;
+    height:17px;
+    background-size:20px;
+}
+
+.account_pop .layer_pop dl dd .action{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    row-gap:7px;
+    margin-top:7px;
+}
+
+.account_pop .layer_pop dl dd .act_btn{
+    width:49%;
+    border-radius: 20px;
+    font-family: "Spoqa Han Sans Neo","Spoqa Han Sans", "Spoqa Han Sans JP",sans-serif;
+    text-align:center;
+    line-height:28px;
+    font-size:14px;
+    font-weight:500;
+    letter-spacing:normal;
+}
+
+.account_pop .layer_pop dl dd {
+    font-size: 16px;
+    line-height: 24px;
+    color: #333;
+    font-family: "Spoqa Han Sans Neo","Spoqa Han Sans", "Spoqa Han Sans JP",sans-serif;
+    font-weight: normal;
+}
+
+.account_pop .layer_pop dl dd span {
+color: inherit;
+}
+
+.account_pop .layer_pop .btn_wrap {
+margin-top: 16px;
+padding: 0 10px 24px;
+}
+
+.account_pop .layer_pop .btn_wrap .btn {
+height: 45px;
+line-height: 45px;
+color: #98a3f4;
+background-color: #fff;
+padding: 0;
+font-family: "Noto Sans Kr", sans-serif;
+border: 1px solid #98a3f4;
+}
+
+.account_pop .pop_mask {
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+background: rgba(0,0,0,0.3);
+}
+
+/** toast style **/
+#wrap .toast {
+position: fixed;
+width:90%;
+max-width:500px;
+right: 50%;
+bottom: -10%;
+transform: translateX(50%);
+z-index: 100;
+word-break:break-all;
+text-align:center;
+}
+
+#wrap .toast p {
+display: none;
+font-size: 15px;
+line-height:21px;
+font-weight: 400;
+color: #fff;
+box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.24);
+  background-color: rgba(51, 51, 51, 0.9);
+border-radius: 3px;
+padding:20px;
+font-family: 'Noto Sans Kr', sans-serif;
+}
+
+.watermark {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 223px;
+    max-width:800px;
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.24);
+    z-index:10;
+}
+
+.watermark p {
+    font-size: 16px;
+    line-height: 24px;
+    color: #fff;
+    font-family: 'Spoqa Han Sans Neo';
+    font-weight:300;
+}
+
+
+
+

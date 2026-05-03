@@ -1,0 +1,155 @@
+@charset "utf-8";
+
+/***** login *****/
+#wrap {background: #f7f8f9;}
+#wrap .header {position: static; border-bottom: 1px solid #aaa; padding: 40px 0; background: #fff;}
+#wrap .header .area {padding: 0;}
+#wrap .header h1 {position: static; float: none; margin: 0 auto; text-align: center;}
+#wrap .header h1 a {background:url(../img/common/logo_b.svg) no-repeat center; }
+
+/** top title **/
+.title_box {text-align: center;}
+.title_box h2 {font-size:30px; line-height: 30px; color:#333; font-weight: bold;}
+.title_box .sub_text {font-size:14px; color:#757575; font-weight: 300; letter-spacing: -0.5px; margin-top: 20px;line-height:20px;}
+
+/** login contents **/
+.login {max-width: 550px; margin: 0 auto; padding:60px 0 30px; transition: all 0.3s ease-in;}
+.login_box {background: #fff; border:1px solid #ebebeb; padding:54px 74px;}
+
+.login .tab_ul {margin: 50px 0 30px; overflow: hidden;}
+.login .tab_wrap li a {font-size: 16px; height:30px; line-height: 30px;}
+
+.login input[type="text"],
+.login input[type="password"] {display:block; height:64px; color:#333; padding-left: 28px; width:calc(100% - 32px);}
+.login input[type="text"] {margin-bottom: -1px;}
+.login input[type="text"]::placeholder {color:#aaa;}
+
+/* IE */
+.login input[type="text"]:-ms-input-placeholder {color:#aaa;}
+.login .info_text {line-height: 24px; color:#333; text-align: center; font-weight: 300;}
+.login .info_text strong {color:#333; font-weight: 500;}
+.login .btn_wrap {margin-top: 48px;}
+.login .btn_wrap .btn {font-weight: bold;}
+.login .btn_wrap .btn:last-child {margin-top: 10px;}
+
+.login .check_box {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 16px;
+}
+	.login .check_box input[type="checkbox"] {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		border: 0;
+		-webkit-appearance: checkbox;
+	}
+
+		.login .check_box input[type="checkbox"] + label {
+			font-size: 14px;
+			color: #333;
+			cursor: pointer;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+
+		.login .check_box input[type="checkbox"]:checked + label:before {
+			background: url(../img/common/checked_type02_ov.svg) no-repeat center;
+		}
+
+		.login .check_box input[type="checkbox"] + label:before {
+			content: ' ';
+			display: inline-block;
+			width: 16px;
+			height: 16px;
+			background: url(../img/common/checked_type02.svg) no-repeat center;
+			line-height: 10px;
+			margin: -2px 6px 0 0;
+			text-align: center;
+			vertical-align: middle;
+		}
+
+.login .find_info {float:right; font-size: 14px; margin-top: 2px;}
+
+/** login form bottom banner **/
+.login_banner {margin-top: 10px;}
+.login_banner img {max-width: 100%; width: 100%;}
+.login_banner .swiper-pagination {bottom: 20px;}
+.login_banner .swiper-pagination-bullet {width: 6px; height:6px; background: #aaa; opacity: 1; outline: 0;}
+.login_banner .swiper-pagination-bullet-active {position: relative; top:1px; width:8px; height:8px; background: #fff; border:2px solid #aaa; box-sizing: border-box;}
+
+/** login fail layout & text **/
+.form_box.login_fail .inp_box {border:1px solid #ff6b53; box-sizing: border-box;}
+.form_box.login_fail .check_box {display: none;}
+.form_box.login_fail .fail_text {display: block;}
+
+.fail_text {display:none; background:url(../img/login/fail_icon.jpg) no-repeat left center; padding-left: 24px; margin-top: 16px;}
+.fail_text strong {font-size:15px; color:#ff6b53; font-weight: 400;}
+
+
+/* find ID, PW */
+.find_pop .layer_pop {padding:0;}
+.find_pop .tab_wrap {padding:30px 12%;}
+.find_pop .tab_wrap .tab_ul li button {padding:18px 0;}
+.find_pop .tab_wrap .tab_con.id_con {margin-top: 40px;}
+
+.find_pop .tab_wrap .tc_wrap .btn {font-weight: 500;}
+.find_pop .tab_wrap .tc_wrap .id_con .btn:last-child {margin-top: 15px;}
+
+.find_pop .inp_box {margin: 28px 0 34px;}
+.find_pop input[type="text"] {height:50px; border: 1px solid #98a3f3; padding-left: 18px;}
+.find_pop input[type="text"]::placeholder {color:#98a3f3;}
+.find_pop .tab_con.pw_con .result_text {margin: 30px 0 0;}
+.find_pop .tab_con.pw_con .result_text strong {word-break: keep-all;}
+
+/* IE */
+.find_pop input[type="text"]:-ms-input-placeholder {color:#98a3f3;}
+
+/* find result */
+.find_result {text-align: center;}
+.result_text {font-size: 18px; color:#333; line-height: 26px; font-weight: 500;}
+.result_text strong { color:#7988f8;}
+.reg_date {font-size:14px; color:#757575; line-height: 26px; margin:16px 0 40px;}
+.reg_date span {color:inherit;}
+
+.agree_box {display:none;}
+.pop_wrap.agree_pop .layer_pop .pop_text {text-align:left; height:600px; overflow-y:auto;}
+.pop_wrap.agree_pop .layer_pop dl {margin-bottom: 10px;}
+.pop_wrap.agree_pop .layer_pop dl:last-child {margin-bottom: 0;}
+.pop_wrap.agree_pop .layer_pop dl dt {font-size:14px; color:#333; margin-bottom: 2px;}
+.pop_wrap.agree_pop .layer_pop dl dd {position: relative; font-size: 12px; line-height: 22px; color:#757575; padding-left: 20px;}
+.pop_wrap.agree_pop .layer_pop dl dd:nth-of-type(1):before {content:"(1)"; position: absolute; left:0; top:0;}
+.pop_wrap.agree_pop .layer_pop dl dd:nth-of-type(2):before {content:"(2)"; position: absolute; left:0; top:0;}
+.pop_wrap.agree_pop .layer_pop dl dd:nth-of-type(3):before {content:"(3)"; position: absolute; left:0; top:0;}
+.pop_wrap.agree_pop .layer_pop dl dd span {display: block; line-height:18px; color:inherit; font-size: 10px;}
+.pop_wrap.agree_pop .popup_close {top:12px; right:10px;}
+
+/** media **/
+@media screen and (max-width:900px) {
+	#wrap .header h1 {float:none;}
+}
+
+@media screen and (max-width:550px){
+	#wrap .header {padding:20px 0;}
+	#wrap .sub_contents {background: #fff;}
+	#wrap .login {padding-top: 40px;}
+	#wrap .login_box {padding:0 3%; border: 0;}
+	#wrap .login input[type="text"], 
+	#wrap .login input[type="password"] {padding-left: 10px; width: calc(100% - 14px);}
+	#wrap .login_banner {padding: 0 3%;}
+	#wrap .login_banner .swiper-pagination {bottom: 10px;}
+
+	.login .info_text {font-size: 14px; line-height: 22px;}
+
+	.pop_wrap.agree_pop .layer_pop .pop_text {font-size:14px; height:500px;}
+}	
+@media screen and (max-width:380px){
+	.find_pop .tab_wrap {padding:30px 3%;}
+}

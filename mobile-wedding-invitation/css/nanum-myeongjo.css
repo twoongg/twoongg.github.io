@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Nanum Myeongjo';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumMyeongjo/NanumMyeongjo.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumMyeongjo/NanumMyeongjo.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumMyeongjo/NanumMyeongjo.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumMyeongjo/NanumMyeongjo.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'Nanum Myeongjo';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumMyeongjo/NanumMyeongjoBold.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumMyeongjo/NanumMyeongjoBold.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumMyeongjo/NanumMyeongjoBold.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumMyeongjo/NanumMyeongjoBold.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'Nanum Myeongjo';
+    font-style: normal;
+    font-weight: 800;
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumMyeongjo/NanumMyeongjoExtraBold.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumMyeongjo/NanumMyeongjoExtraBold.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumMyeongjo/NanumMyeongjoExtraBold.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumMyeongjo/NanumMyeongjoExtraBold.ttf) format("truetype");
+}

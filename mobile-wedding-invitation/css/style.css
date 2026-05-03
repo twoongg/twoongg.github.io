@@ -1,0 +1,2041 @@
+﻿@charset "UTF-8";
+
+html, body {
+    forced-color-adjust:none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+.swiper-container {
+    position: relative;
+    overflow: hidden;
+}
+.area {
+padding: 0 10%;
+}
+
+h2,
+.area h2 {
+text-align: center;
+margin-bottom: 20px;
+}
+
+.sound {
+overflow: hidden;
+text-indent: -5000px;
+position: absolute;
+line-height: 0;
+font-size: 0;
+width: 0;
+height: 0;
+}
+
+input:focus {
+outline: 0;
+}
+
+.btn {
+display: block;
+width: 100%;
+height: 50px;
+line-height: 50px;
+font-size: 15px;
+text-align: center;
+background: #757575;
+color: #fff;
+font-family: "Noto Sans KR", sans-serif;
+letter-spacing: -0.38px;
+font-weight:bold;
+}
+
+.img_con img {
+max-width: 100%;
+}
+
+/***** 청첩장 템플릿 *****/
+
+/* 청첩장 일러스트형 상단 영역 */
+.header .area {
+padding: 2% 10% 18%;
+}
+
+.head_name dl {
+margin-bottom: 28px;
+}
+
+.head_name dl:last-child {
+margin-bottom: 0;
+}
+
+.head_name dt {
+font-size: 18px;
+color: #8f583f;
+margin-bottom: 12px;
+letter-spacing: 0.1em;
+}
+
+.head_name dd {
+font-size: 28px;
+color: #8f583f;
+letter-spacing: 0.7em;
+}
+
+.head_info {
+margin-top: 46px;
+}
+
+.head_info p {
+font-size: 20px;
+color: #8c5036;
+letter-spacing: 1.2px;
+}
+
+.head_info .info_date {
+font-size: 20px;
+font-family: 'Cinzel','Apple Myungjo','Nanum Myeongjo', serif;
+font-weight: 400;
+letter-spacing: 1px;
+margin-bottom: 12px;
+}
+
+.head_info .info_date strong {
+font: inherit;
+}
+
+.head_info .info_place {
+letter-spacing: 1.2px;
+}
+
+/* 청첩장 포토형 상단 영역 */
+.photo .header {
+background: #f7f7f7;
+}
+
+.photo .head_img {
+position: relative;
+padding: 120px 0;
+}
+
+.photo .head_img img {
+max-width: 136px;
+}
+
+.photo .head_img .head_name {
+position: absolute;
+top: 32%;
+right: 6%;
+}
+
+.photo .head_img .head_name p {
+text-align: right;
+padding-right: 6px;
+}
+
+.photo .head_img .head_name p:last-child {
+margin: 6px 0 0 0;
+}
+
+.photo .head_img .head_name p strong {
+font-size: 24px;
+color: #8f583f;
+letter-spacing: 0.7em;
+}
+
+.photo .head_info {
+margin-top: 20px;
+}
+
+.photo .head_info p {
+color: #4d1f03;
+}
+
+.photo .head_info .info_date {
+font-weight: 500;
+margin-bottom: 8px;
+}
+
+/* 청첩장 포토형 결혼합니다 */
+.photo .marry {
+background: #fff;
+text-align: center;
+}
+
+.photo .marry h2 {
+text-align: center;
+}
+
+/* 청첩장 포토형 신랑 & 신부 연락 */
+.photo .call {
+background: #f8f9fa;
+}
+
+/* 청첩장 포토형 갤러리 */
+.photo .gallery {
+background: #fff;
+}
+
+/* 청첩장 포토형 영상 */
+.photo .movie {
+background: #fff;
+}
+
+/* 결혼합니다 */
+.marry {
+background: #fceeeb;
+}
+
+.marry h2 {
+text-align: left;
+margin-bottom: 0;
+padding-bottom: 11%;
+}
+
+.marry h2 img {
+max-width: 100%;
+}
+
+.marry .area {
+padding: 18% 10%;
+}
+
+.marry p {
+font-size: 16px;
+line-height: 36px;
+color: #0e0f2d;
+letter-spacing: -0.25px;
+}
+
+/* 신랑 & 신부 연락 */
+.call {
+background: #f9f9fb;
+padding: 60px 0 66px;
+text-align: center;
+}
+.call .grid_box {
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.call dl {
+width: 100%;
+}
+
+.call dl:after {
+content: "";
+display: block;
+clear: both;
+}
+
+.call dl dt {
+    font-size:18px;
+    color:#333;
+    font-weight:bold;
+    margin-bottom:16px;
+    letter-spacing:-0.45px;
+}
+
+.call dl dd {
+    display:inline-block;
+}
+.call dl dd:not(:last-child){
+    margin-right:16px;
+}
+
+.call .list_wrap {
+position: relative;
+margin-top: 48px;
+}
+
+.call .list_wrap:after {
+content: "";
+display: block;
+clear: both;
+}
+
+.call .list_wrap.on .list_con {
+display: block;
+}
+
+.call .list_wrap.on .info_detail {
+background: url(https://static.barunsoncard.com/barunsonmcard/invitation/icon/ico_12_down.svg) no-repeat;
+}
+
+.call .list_wrap li {
+}
+
+.call .list_wrap h3 {
+font-size: 15px;
+}
+
+.call .list_wrap .list_con {
+display: none;
+}
+.call .list_wrap .list_con:nth-of-type(1){
+    margin:28px 0 34px;
+}
+
+.call .list_wrap .list_con p {
+    margin-bottom:12px;
+}
+.call .list_wrap .btn_wrap {
+}
+
+.call .list_wrap .btn_wrap a {
+    display:inline-block;
+}
+.call .list_wrap .btn_wrap a:not(:last-child){
+    margin-right:10px;
+}
+.call .list_wrap span:nth-child(1) {
+font-size: 12px;
+margin-right: 5px;
+}
+.call .list_wrap .name {
+    font-size:16px;
+    color:#333;
+    font-weight:bold;
+    letter-spacing:-0.4px;
+}
+.call .list_wrap .deceased_text {font-weight:400;}
+.call .list_wrap .deceased_text img {vertical-align:bottom;}
+.info_detail {
+position: absolute;
+top: 4px;
+width: 12px;
+height: 12px;
+display: block;
+background: url(https://static.barunsoncard.com/barunsonmcard/invitation/icon/ico_12_up.svg) no-repeat;
+background-position: center 0;
+text-indent: -9999999px;
+right: 50%;
+transform: translateX(50%);
+background-size: 12px;
+border:0;
+}
+
+/** 갤러리 **/
+.gallery {
+background: #fff;
+}
+
+.gallery .area {
+padding: 3% 3%;
+}
+
+.skin_gallery {
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    grid-gap:10px;
+}
+
+.skin_gallery figure {
+box-sizing: border-box;
+}
+
+.skin_gallery figure a {
+background-size: cover !important;
+cursor: default;
+display: block;
+}
+
+.skin_gallery figure .img_frame {
+width: 100%;
+vertical-align: top;
+}
+
+/* 갤러리 타입02 */
+.gallery_type02 {
+text-align: center;
+}
+
+.gallery_type02 li {
+margin-bottom: 10px;
+}
+
+.gallery_type02 li:last-child {
+margin-bottom: 0;
+}
+
+.gallery_type02 li img {
+max-width: 100%;
+}
+
+/* .gallery_type01,
+.gallery_type02 {display: none;} */
+
+/* 갤러리 타입03 */
+.gallery_type03 {
+text-align: center;
+}
+
+.gallery_type03 .gallery-top .swiper-slide img {
+width: 100%;
+}
+
+.gallery_type03 .gallery-thumbs .swiper-slide {
+height: 150px;
+overflow: hidden;
+}
+
+.gallery_type03 .gallery-thumbs .swiper-slide img {
+}
+
+.gallery_type03 .swiper-slide-thumb-active {
+border: 1px solid #757575;
+box-sizing: border-box;
+}
+
+.gallery_type03 .swiper-button-next.swiper-button-white,
+.swiper-button-prev.swiper-button-white {
+--swiper-navigation-color: #333;
+}
+
+/* 영상 */
+.movie {
+background: #fff;
+}
+
+.movie .area {
+padding: 0 3% 10px;
+}
+
+.iframe_wrap {
+position: relative;
+padding-bottom: 56.25% !important;
+height: 0;
+overflow: hidden;
+max-width: 100%;
+}
+
+.iframe_wrap iframe {
+position: absolute;
+top: 0;
+left: 0;
+}
+
+/* 오시는 길 */
+.location {
+}
+
+.location .area {
+padding: 0px 3%;
+}
+
+.location iframe {
+width: 100%;
+}
+
+.location .map_wrap {
+position: relative;
+}
+.location .map_title {
+    text-align: center;
+}
+.location .btn_wrap .map_btn {
+display: block;
+width: 100%;
+height: 48px;
+line-height: 48px;
+background: #757575;
+color: #fff;
+text-decoration: none;
+font-family: "Noto Sans KR", sans-serif;
+text-align: center;
+font-weight: 500;
+}
+
+.location .map_info .map_title dt {
+font-size: 18px;
+color: #333;
+font-weight: bold;
+margin-bottom: 6px;
+letter-spacing:-0.45px;
+}
+
+.location .map_info .map_title dd {
+font-size: 16px;
+color: #333;
+font-weight: 400;
+line-height:24px;
+letter-spacing:-0.4px;
+}
+
+.location .location_button_box {
+    text-align:center;
+    margin:12px 0 20px;
+    font-size:0;
+}
+
+.location .location_button_box a {
+    display:inline-block;
+    width:90px;
+    height: 38px; 
+    line-height: 38px;
+    border:1px solid #ddd;
+    border-radius:20px;
+    text-indent:18px;
+    font-family:"Noto Sans Kr";
+    font-size:15px;
+    color:#666;
+    font-weight:bold;
+    letter-spacing:-0.38px;
+}
+.location .location_button_box a:not(:last-child) {
+    margin-right:12px;
+
+}
+.location .location_button_box .map_btn {
+    background:url(https://static.barunsoncard.com/barunsonmcard/invitation/icon/ico_16_map.svg) no-repeat 18px 11px;
+}
+.location .location_button_box .call_btn {
+    background:url(https://static.barunsoncard.com/barunsonmcard/invitation/icon/ico_16_call.svg) no-repeat 18px 11px;
+}
+
+.location .location_info {
+margin-top: 30px;
+/*border-bottom: 1px solid #ddd;*/
+padding-bottom: 10px;
+}
+
+.location .location_info dl {
+margin-bottom: 8px;
+}
+
+.location .location_info dl:last-child {
+margin-bottom: 0;
+}
+
+.location .location_info dl dt {
+font-size: 16px;
+color: #555;
+font-weight: bold;
+}
+
+.location .location_info dl dd {
+font-size: 15px;
+color: #666;
+line-height: 32px;
+}
+
+.location .navigation {
+    position: relative;
+    text-align:center;
+}
+
+.location .navigation ul {
+    display:inline-block;
+    padding:7px 0px;
+}
+
+.location .navigation ul li {
+    float: left;   
+    padding-top:5px;  
+    margin-right:30px;
+}
+
+    .location .navigation ul li:last-child {
+        margin-right:0;
+    }
+
+
+.location .navigation ul li img {
+    width:22px;
+    vertical-align:middle;
+    padding-right:5px;
+
+}
+.location .navigation ul li a {
+    font-family: "Noto Sans Kr";
+    color: #666;
+    font-size: 15px;
+    letter-spacing: -0.38px;
+}
+
+/* 화환 선물하기 */
+div.flowergift {
+    position: relative;
+    padding-bottom: 60px;
+}
+
+div.flowergift .gift_area {
+padding: 0 3%;
+}
+div.flowergift .gift_area img {width:100%;}
+div.flowergift .gift_area .btn {background:none}
+
+div.flowergiftsub {
+    position: relative;
+    background: #f9f9fb;
+    padding-bottom: 60px;
+}
+div.flowergiftsub .btn_wrap {
+    padding: 0 6%;
+}
+div.flowergiftsub .btn_wrap .fl_btn {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background: #fff;
+    color: #666;
+    margin: 0 auto;
+    font-size: 15px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    border-radius: 25px;
+}
+
+div.invitation_gift .btn {
+position: relative;
+height: 105px;
+line-height: inherit;
+color: #333;
+border-radius: 5px;
+text-align: left;
+}
+div.invitation_gift .invitation_gift_box {padding:0 3%;}
+div.invitation_gift .btn_funding {margin-bottom:12px;}
+div.invitation_gift .btn_funding .btn {background-color:#D9F3F3;}
+div.invitation_gift .btn_funding .btn img {bottom:-3px;}
+div.invitation_gift .btn_fla .btn {background-color: #ffe5e0;} 
+
+
+div.invitation_gift .btn img {
+position: absolute;
+right: 4px;
+bottom: 0;
+width: 170px;
+}
+
+div.invitation_gift .btn .btn_text01 {
+display: block;
+font-size:14px;
+font-weight:400;
+line-height: 19px;
+margin-left: 30px;
+padding-top: 20px;
+margin-bottom: 6px;
+letter-spacing:-0.35px;
+color:#333;
+}
+
+div.invitation_gift .btn .btn_text02 {
+display: inline-block;
+font-size:15px;
+line-height:22px;
+background: url(../img/order/c_flowers/flowers_arr.png) no-repeat 100%;
+background-size: 6px;
+padding-right: 12px;
+margin-left: 30px;
+font-weight: 400;
+letter-spacing:-0.38px;
+color:#333;
+}
+@media screen and (max-width:340px) {
+
+    div.invitation_gift .btn {height :95px;}
+    div.invitation_gift .btn img {width:150px; right:0;}
+
+    div.invitation_gift .btn .btn_text01 {font-size:12px; padding-top:16px;}
+    div.invitation_gift .btn .btn_text02 {font-size:13px;}
+
+    div.invitation_gift .btn .btn_text01,
+    div.invitation_gift .btn .btn_text02 {margin-left: 20px;}
+}
+
+/* 화환 배너 플로팅 */
+.banner_floating {
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+    z-index: 11;
+    --banner-width: 319px; /* 기본값 (fallback) */
+}
+
+    .banner_floating a {
+        display: block;
+        width: var(--banner-width); /* CSS 변수 사용 */
+        max-width: calc(100vw - 32px); /* 화면 너비를 넘지 않도록 제한 */
+        height: 56px;
+        overflow: hidden;
+        border-radius: 28px;
+        box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.16);
+        transition: width 0.3s ease, border-radius 0.3s ease;
+        -webkit-transition: width 0.3s ease, border-radius 0.3s ease;
+        -webkit-border-radius: 28px;
+    }
+
+    .banner_floating img {
+        display: block;
+        height: 100%;
+        width: auto; /* 이미지는 자동 너비 */
+        max-width: none; /* 이미지 원본 비율 유지 */
+    }
+
+    .banner_floating.down a {
+        width: 56px;
+    }
+
+    .banner_floating .btn_close {
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: 0;
+        right: -18px;
+        background: url(https://static.barunsoncard.com/barunsonmcard/invitation/ico_floating_close.png) 0 0 no-repeat;
+        background-size: 16px 16px;
+        border: 0 none;
+        font-size: 0;
+        line-height: 0;
+        text-indent: -9999px;
+    }
+
+    .banner_floating.hidden {
+        display: none;
+    }
+
+    .banner_floating.bottom-reached {
+        /* 하단 도달 시 추가 스타일 (필요 시) */
+    }
+
+/* 반응형 처리 */
+@media screen and (max-width: 360px) {
+    .banner_floating a {
+        height: 53px;
+        max-width: calc(100vw - 32px); /* 화면 너비 제한 유지 */
+    }
+
+    .banner_floating.down a {
+        width: 53px;
+    }
+
+    .banner_floating img {
+        height: 100%;
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .banner_floating a {
+        height: 50px;
+        max-width: calc(100vw - 32px); /* 화면 너비 제한 유지 */
+    }
+
+    .banner_floating.down a {
+        width: 50px;
+    }
+
+    .banner_floating img {
+        height: 100%;
+        width: auto;
+    }
+}
+
+.flower-float-frame {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.flower-float-frame .title {
+    width: 100%;
+    padding: 32px 0 8px;
+}  
+
+.flower-float-frame .div-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    background-color: #ffffff;
+    border-radius: 8px 8px 0px 0px;
+}
+
+    .flower-float-frame .text-wrapper {
+        color: #161616;
+        font-size: 16px;
+        letter-spacing: -0.32px;
+        line-height: 24px;
+        position: relative;
+        width: fit-content;
+        margin-top: -1.00px;
+        font-family: "Spoqa Han Sans Neo-Medium", Helvetica;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    .flower-float-frame .line-wrapper {
+        width: calc(100% - 32px);
+        height: 1.5px;
+        margin: 20px auto;
+        background: #F4F4F5;
+    }
+
+    .flower-float-frame .div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+        padding: 0 16px;
+        align-self: stretch;
+        background-color: #ffffff;
+        position: relative;
+        flex: 0 0 auto;
+    }
+
+    .flower-float-frame .div-2 {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        position: relative;
+        flex: 0 0 auto;
+    }
+
+    .flower-float-frame .div-3 {
+        display: flex;
+        flex-direction: column;
+        width: 16px;
+        height: 16px;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        aspect-ratio: 1;
+    }
+
+    .flower-float-frame .shape {
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: 0;
+        left: 0;
+    }
+
+    .flower-float-frame .text-wrapper-2 {
+        position: relative;
+        width: fit-content;
+        margin-top: -1.00px;
+        font-family: "Spoqa Han Sans Neo-Regular", Helvetica;
+        font-weight: 400;
+        color: #161616;
+        font-size: 15px;
+        text-align: center;
+        letter-spacing: -0.30px;
+        line-height: normal;
+    }
+
+    .flower-float-frame .div-4 {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .flower-float-frame .img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .flower-float-frame .p {
+        color: #999999;
+        font-size: 12px;
+        letter-spacing: -0.24px;
+        line-height: normal;
+        position: relative;
+        width: fit-content;
+        margin-top: -1.00px;
+        font-family: "Spoqa Han Sans Neo-Medium", Helvetica;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    .flower-float-frame .btn {
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+
+    .flower-float-frame .btn-wrapper {
+        display: flex;
+        align-self: stretch;
+        gap: 8px;
+        padding: 20px 16px;
+    }
+
+    .flower-float-frame .text-wrapper-3 {
+        font-family: "Spoqa Han Sans Neo-Medium", Helvetica;
+        font-weight: 500;
+        color: #161616;
+        font-size: 16px;
+    }
+
+    .flower-float-frame .button-CTA-2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 50px;
+        padding: 8px 16px;
+        background-color: #98a3f4;
+        border-radius: 3px;
+        box-sizing: border-box;
+    }
+
+    .flower-float-frame .text-wrapper-4 {
+        font-family: "Spoqa Han Sans Neo-Medium", Helvetica;
+        font-weight: 500;
+        color: #ffffff;
+        font-size: 16px;
+    }
+
+
+
+/* 신랑 & 신부에게 마음 전하기 */
+.remittance {
+    position: relative;
+    background: #f9f9fb;
+    padding-bottom: 10px;
+}
+
+.remittance_noflower {
+    padding-bottom: 60px;
+    background: #f9f9fb;
+}
+
+.remittance:before {
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    top:-2px;
+    height:3px;
+    background:#fff;
+    z-index:10;
+}
+    
+.remittance h2 {
+font-size: 20px;
+color: #8c5036;
+}
+
+.remittance .btn_wrap {
+padding: 0 6%;
+}
+
+.remittance .btn_wrap .remittance_btn {
+font-size: 14px;
+}
+
+.remittance .btn_wrap .remittance_btn.type02 {
+margin-top: 20px;
+}
+
+.remittance .btn_wrap .remittance_btn.type03 {
+width: 100%;
+height: 50px;
+line-height: 50px;
+background-color:#ffea02;
+color: #000;
+margin: 0 auto;
+overflow: hidden;
+border-radius:25px;
+font-size:15px;
+font-weight:bold;
+}
+.remittance .btn_wrap .remittance_btn.type03 .kakaopay {
+    display:inline-block;
+    width:50px; height:40px;
+    vertical-align:middle;
+    background-image: url(https://static.barunsoncard.com/barunsonmcard/invitation/icon/ico_kakaopay.png);
+    background-repeat:no-repeat;
+    background-size:40px !important;
+    background-position:center;
+}
+
+.remittance .btn_wrap .btn.type03:not(:last-child) {
+margin-bottom: 8px;
+}
+
+.remittance .btn_wrap .an_btn {
+width: 100%;
+height: 50px;
+line-height: 50px;
+background: #fff;
+color: #666;
+margin: 0 auto;
+font-size: 15px;
+border:1px solid #ddd;
+box-sizing:border-box;
+border-radius:25px;
+}
+
+
+.remittance .btn_wrap:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+.remittance .btn_wrap .btn.type03:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.remittance_pop_h, .remittance_pop_w {
+display: none;
+position: absolute;
+top: -1px;
+left: 0;
+width: 100%;
+background-color: #fff;
+}
+
+.remittance_pop_h .remittance_pop_inner, .remittance_pop_w .remittance_pop_inner {
+background-color: #fafafa;
+border: 1px solid #757575;
+width: 90%;
+margin-left: 5%;
+padding: 8% 7.5% 5% 7.5%;
+box-sizing: border-box;
+position: relative;
+}
+
+.remittance_pop_inner .account_info {
+color: #232323;
+text-align: left;
+font-family: 'Noto Sans KR', sans-serif;
+font-weight: 600;
+line-height: 40px;
+border-bottom: 1px solid #aaa;
+font-size: 18px;
+margin-bottom: 8.5%;
+}
+
+.remittance_pop_inner .account_c {
+color: #232323;
+text-align: left;
+font-family: 'Noto Sans KR', sans-serif;
+font-size: 18px;
+padding-bottom: 2.5%;
+}
+
+.remittance_pop_inner .account_num {
+color: #232323;
+text-align: left;
+font-family: 'Noto Sans KR', sans-serif;
+font-size: 18px;
+line-height: 18px;
+}
+
+.remittance_pop_inner .copy_btn {
+display: block;
+line-height: 26px;
+width: 30%;
+margin-left: 70%;
+margin-top: -20px;
+background-color: #dddddd;
+border-radius: 4px;
+font-size: 12px;
+font-family: 'Noto Sans KR', sans-serif;
+color: #232323;
+text-align: center;
+}
+
+.remittance_pop_inner .close_btn {
+width: 100%;
+line-height: 52px;
+line-height: 52px;
+color: #fff;
+background-color: #757575;
+display: block;
+border-radius: 5px;
+margin-top: 10%;
+font-family: 'Noto Sans KR', sans-serif;
+font-size: 18px;
+text-align: center;
+}
+
+/* 방명록 */
+.guest_book {
+background: #f7f8f9;
+}
+
+.guest_book .area {
+padding: 0 3% 80px;
+}
+
+.guest_book .write_box {
+background: none;
+}
+
+.guest_book .write_box input {
+    width:100%;
+    height:48px;
+    line-height:48px;
+    font-family:"Noto Sans Kr";
+    font-size:15px;
+    color:#333;
+    border:1px solid #ddd;
+    border-radius:6px;
+    box-sizing:border-box;
+    text-indent:16px;
+}
+.guest_book .write_box input:not(:last-child) {
+    margin-bottom:8px;
+}
+.guest_book .write_box input::placeholder {
+    color:#ccc;
+}
+.guest_book .write_box .message_textarea_wrap {
+    position: relative;
+}
+.guest_book .write_box textarea {
+    width: 100%;
+    min-height: 48px;
+    font-family: "Noto Sans Kr";
+    font-size: 15px;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    padding: 14px 16px;
+    resize: none;
+    overflow: hidden;
+    line-height: 1.4;
+}
+.guest_book .write_box textarea::placeholder {
+    color: #ccc;
+}
+.guest_book .write_box .char_count {
+    display: block;
+    text-align: right;
+    font-size: 12px;
+    color: #999;
+    margin-top: 4px;
+}
+.guest_book .write_box .char_count em {
+    font-style: normal;
+    color: #333;
+}
+.guest_book .write_box dl {
+    border-bottom: 1px solid #ddd;
+    color: #666;
+    border-top: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    line-height: 30px;
+}
+
+.guest_book .write_box dl:after {
+content: "";
+display: block;
+clear: both;
+}
+
+.guest_book .write_box dl dt {
+position: relative;
+float: left;
+width: 90px;
+vertical-align: top;
+color: #666;
+font-family: 'Noto Sans Kr';
+font-size:15px;
+letter-spacing: 0.3px;
+top: auto;
+text-indent:10px;
+}
+.guest_book .write_box dl dt:after {
+content: ":";
+position: absolute;
+right: 0;
+}
+
+.guest_book .write_box dl dd {
+float: right;
+width: calc(100% - 100px);
+font-family: 'Noto Sans Kr';
+font-size: 15px;
+color:#333;
+vertical-align: top;
+}
+
+.guest_book .write_box dl dd input {
+width: 100%;
+box-sizing: border-box;
+border: 0;
+outline: none;
+background-color:transparent;
+font-family:"Noto Sans Kr";
+font-size:15px;
+color:#333;
+letter-spacing:-0.38px;
+}
+
+.guest_book .guest_btn {
+margin-top: 24px;
+border:0;
+cursor:pointer;
+background:#333;
+border-radius:5px;
+
+}
+
+.message_wrap {
+margin-top: 44px;
+font-family: "Noto Sans KR", sans-serif;
+}
+
+    
+.message_wrap .message_top {
+    display: grid;
+    grid-template-columns:auto 1fr;
+    align-items:center;
+    justify-items:end;
+}
+
+.message_wrap .message_top .message_box {
+}
+.message_wrap .message_top .name {
+color: #333;
+font-size: 14px;
+font-weight: 500;
+}
+
+.message_wrap .message_top .date {
+color: #ccc;
+font-size:13px;
+margin-right:8px;
+}
+
+.message_wrap li {
+background: #fff;
+padding: 16px;
+box-sizing: border-box;
+border-radius:5px;
+}
+.message_wrap li:not(:last-child) {margin-bottom:12px;}
+
+.message_wrap .message_text {
+position: relative;
+margin: 8px 0 0;
+}
+
+.message_wrap .message_text p {
+font-size: 15px;
+color: #666;
+letter-spacing: -0.25px;
+word-wrap:break-word;
+white-space: pre-line;
+}
+
+.message_wrap .message_del {
+    position:relative;
+    width: 10px;
+    height:18px;
+    background: url(https://static.barunsoncard.com/barunsonmcard/invitation/icon/ico_10_close.svg) no-repeat 0;
+    text-indent: -9999px;
+    background-size: 10px;
+    border: 0;
+    padding:0;
+}
+
+.message_wrap .btn_wrap {
+margin-top: 35px;
+}
+
+.message_wrap .btn_wrap::after {
+content: "";
+display: block;
+clear: both;
+}
+
+.message_wrap .btn_wrap .btn {
+float: left;
+width: 49%;
+margin-right: 2%;
+background-color:transparent;
+border:1px solid #ccc;
+border-radius:5px;
+color:#666;
+box-sizing:border-box;
+}
+
+.message_wrap .btn_wrap .btn:last-child {
+margin-right: 0;
+}
+
+.password_check {
+display: none;
+}
+
+.password_check input {
+width: 100%;
+background: #fff;
+border: 0;
+height: 40px;
+text-align: left;
+font-family:"Noto Sans Kr";
+font-size: 14px;
+margin-top:16px;
+border:1px solid #ddd;
+box-sizing:border-box;
+border-radius:3px;
+text-indent:12px;
+}
+
+.password_check input::placeholder {
+    color:#ccc;
+}
+
+.password_check .check_btn {
+height: 40px;
+line-height: 40px;
+margin-top: 10px;
+border-radius: 5px;
+border:1px solid #ccc;
+box-sizing:border-box;
+background:#fff;
+color:#666;
+font-size:14px;
+}
+
+/***** //청첩장 템플릿 *****/
+
+/***** 감사장 템플릿 *****/
+
+/* 상단 영역 */
+.thanks .header .area {
+padding: 10% 10% 18%;
+}
+
+.thanks .head_name dd {
+letter-spacing: 11px;
+}
+
+/* 감사합니다  */
+.thanks .marry.tks {
+}
+
+.thanks .marry.tks h2 {
+text-align: center;
+}
+
+.thanks .marry.tks p {
+font-weight: bold;
+text-align: center;
+}
+
+/* 신랑 & 신부 연락처 */
+.thanks .call span {
+color: #121329;
+}
+
+
+/* 감사장포토형 상단 영역  */
+.thanks .head_img {
+padding-top: 16%;
+}
+
+.thanks.photo .head_img .head_name {
+top: 42%;
+}
+
+.thanks.photo .head_img {
+padding: 180px 0;
+}
+
+.thanks .wedd_photo {
+background: #fff;
+}
+
+/* RSVP 공통 */
+.rsvp .btn {
+    height: 45px;
+    line-height: inherit;
+    border-radius: 3px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #333;
+    padding: 0px;
+}
+
+.rsvp .btn.purple {
+    background-color: #98A3F4;
+    color: #fff;
+}
+
+.rsvp .btn.line {
+    border: 1px solid #98A3F4;
+    color: #98A3F4;
+}
+
+/* RSVP VIEW 페이지 */
+.rsvp_area {
+    text-align: center;
+    padding: 77px 20px 66px 20px;
+    background-color: #F4F4F4;
+}
+
+.rsvp_area h3{
+    font-size:15px;
+    font-weight:700;
+    line-height:19px;
+    margin-bottom:28px;
+    color:#777;
+}
+
+.rsvp_area p {
+    font-size: 16px;
+    font-weight:400;
+    line-height:28px;
+    color:#333;
+    margin-bottom:30px;
+}
+
+ #area23 p{
+    max-height:160px;
+    overflow-y:auto;
+}
+/* 참석의사 전달 팝업 */
+.pop_wrap {
+    display: none;
+}
+
+.pop_wrap::before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index:11;
+}
+
+.bottom_pop {
+    position: fixed;
+    width: 100%;
+    max-width: 800px;
+    bottom: 0px;
+    background-color: #fff;
+    border-radius: 8px 8px 0px 0px;
+    box-sizing: border-box;
+    font: inherit;
+    color: #333;
+    letter-spacing: normal;
+    z-index:1000;
+}
+
+.bottom_pop * {
+    font-family: 'Spoqa Han Sans Neo', "Open Sans","Spoqa Han Sans", Apple SD Gothic Neo, Nanum Barun Gothic, Nanum Gothic, "돋움", Dotum, Verdana, Arial, sans-serif;
+}
+
+.bottom_pop .btn_close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    background: none;
+    padding: 0px;
+}
+
+    .bottom_pop.flower .btn_close {
+        width: 24px;
+        height: 24px;
+        right: 16px;
+        top: 16px;
+    }
+        .bottom_pop.flower .btn_close img {
+        width: 24px;
+        height: 24px;
+    }
+
+.bottom_pop .btn_close img {
+    display: block;
+}
+
+.bottom_pop .btn_box {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.bottom_pop .btn_box .btn {
+    height: 42px;
+    font-weight: 400;
+    border: 1px solid #D7D7D7;
+}
+
+.bottom_pop .btn_box .btn.active {
+    border: 1px solid #98A3F4;
+    color: #98A3F4;
+    font-weight:500;
+}
+
+.bottom_pop input[type="text"] {
+    width: 100%;
+    height: 42px;
+    padding: 0px 16px;
+    font-size: 15px;
+    font-weight: 340;
+    color: #333;
+    border: 1px solid #EBEBEB;
+    box-sizing: border-box;
+}
+
+.bottom_pop input[type="text"]::placeholder {
+    font-size: 15px;
+    color: #acacac;
+}
+
+.bottom_pop input[type="text"]:focus{
+    border:1px solid #333;
+}
+
+.bottom_pop input.er {
+    border: 1px solid #FF5D5D;
+}
+
+.bottom_pop > .title {
+    margin-bottom: 12px;
+    padding:36px 20px 0px;
+}
+
+.bottom_pop .title h2 {
+    font-size:18px;
+    font-weight: 700;
+    line-height:24px;
+    letter-spacing:-0.4px;
+}
+
+.flower-float-frame .title h2 {
+    font-weight: 500;
+}
+
+.bottom_pop .contents {
+    padding:0px 20px 18px;
+    max-height:450px;
+    box-sizing:border-box;
+    overflow-y:auto;
+}
+
+.bottom_pop .txt {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.bottom_pop .txt p {
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 400;
+    font-family: "Noto Sans Kr";
+    max-height:120px;
+    overflow-y:auto;
+}
+
+.bottom_pop .list ul {
+    width:272px;
+    margin:0 auto;
+}
+
+.bottom_pop .list ul li {
+    margin-bottom: 4px;
+    display: flex;
+    text-align:left;
+}
+
+.bottom_pop .list {
+    margin-bottom:18px;
+}
+
+.bottom_pop .list ul li span {
+    width: 52px;
+    font-size: 13px;
+    line-height: 19px;
+    color: #cbcbcb;
+    font-weight: 400;
+    letter-spacing:-0.4px;
+}
+
+.bottom_pop .list ul li p {
+    font-size: 13px;
+    line-height: 19px;
+    font-weight: 300;
+    letter-spacing: -0.4px;
+}
+
+.bottom_pop .list ul li:last-child {
+    margin-bottom: 0px;
+}
+
+.bottom_pop .close {
+    padding-top:12px;
+    text-align:right;
+    display:flex;
+    justify-content:end;
+}
+
+.bottom_pop .close a{
+    font-size:13px;
+    font-weight:300;
+    line-height:14px;
+    padding-left:8px;
+    margin-left:8px;
+    color:#333;
+    position:relative;
+}
+
+.bottom_pop .close a:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 80%;
+    background-color: #EEEEEE;
+}
+
+.bottom_pop .close a:first-child {
+    margin-left:0px;
+    padding-left:0px;
+}
+
+.bottom_pop .close a:first-child:before {
+    content: none;
+}
+
+.bottom_pop .tab_menu {
+    display:flex;
+    margin-bottom:16px;
+}
+
+.bottom_pop .tab_menu .tab_btn {
+    font-size: 16px;
+    line-height: 22px;
+    height: 42px;
+    color: #ccc;
+    letter-spacing: 0.4px;
+    border: 1px solid #e3e3e3;
+    font-weight: 700;
+    width: 50%;
+    border-radius:0px;
+}
+
+.bottom_pop .tab_menu .tab_btn.active {
+    color: #6A7AEF;
+    border-top: 2px solid #6A7AEF;
+    border-bottom:0px;
+}
+
+.bottom_pop .tab_menu .tab_btn:first-child.active {
+    border-right:0px;
+}
+
+.bottom_pop .tab_menu .tab_btn:last-child.active {
+    border-left: 0px;
+}
+
+.bottom_pop .form_list ul li {
+    display:flex;
+    align-items:center;
+    margin-bottom:12px;
+}
+
+.bottom_pop .form_list ul li:last-child {
+    margin-bottom:0px;
+}
+
+.bottom_pop .form_list ul li span {
+    font-size: 14px;
+    font-weight: 400;
+    width: 25%;
+}
+
+.bottom_pop .form_list ul li span .import {
+    width: 4px;
+    height: 4px;
+    background-color: #E9462B;
+    border-radius:100%;
+    display:inline-block;
+    vertical-align:top;
+}
+
+.bottom_pop .form_list ul li input {
+    width: 75%;
+}
+
+.bottom_pop .form_list ul li .btn_box {
+    width: 75%;
+}
+
+.bottom_pop .example {
+    background: #F7F9FA;
+    padding: 10px 14px;
+    margin: 16px 0px;
+}
+
+.bottom_pop .example p {
+    font-size:10px;
+    line-height:14px;
+    font-weight:300;
+    position:relative;
+    padding-left:12px;
+}
+
+.bottom_pop .example p::before {
+    content: '※';
+    position:absolute;
+    left:0px;
+}
+
+.bottom_pop .policy {
+    padding:5px 0px 0px;
+}
+
+.bottom_pop .policy .title {
+    margin-bottom: 6px;
+}
+
+.bottom_pop .policy .title h4 {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    background: url(https://static.barunsoncard.com/barunsonmcard/common/icon/ico_faq_close.png) no-repeat 99% center;
+    background-size: 14px;
+    cursor: pointer;
+}
+
+.bottom_pop .policy .title h4 span {
+    color: #FF0000;
+}
+
+.bottom_pop .policy.on .policy_con {
+    display:block;
+}
+
+.bottom_pop .policy.on .title h4 {
+    background: url(https://static.barunsoncard.com/barunsonmcard/common/icon/ico_faq_open.png) no-repeat 99% center;
+    background-size: 14px;
+}
+
+.bottom_pop .policy .policy_con {
+    display: none;
+    border: 1px solid #EBEBEB;
+    padding: 14px 12px;
+    margin-bottom: 4px;
+}
+
+.bottom_pop .policy .policy_con p {
+    font-size: 12px;
+    line-height:16px;
+    letter-spacing:-1px;
+}
+
+.bottom_pop .policy .policy_con .dec {
+    padding: 10px 0px;
+    list-style: inside;
+}
+
+.bottom_pop .policy .policy_con .dec li {
+    display: flex;
+    align-items:center;
+    margin-bottom: 8px;
+    padding-left:5px;
+}
+
+.bottom_pop .policy .policy_con .dec li:before{
+    content:'';
+    display:inline-block;
+    width:3px;
+    height:3px;
+    border-radius:100%;
+    background:#333;
+}
+
+.bottom_pop .policy .policy_con .dec li:last-child {
+    margin-bottom: 0px;
+}
+
+.bottom_pop .policy .policy_con .dec li span {
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    line-height: 16px;
+    padding-left:5px;
+}
+
+.bottom_pop .policy .policy_con .dec li p {
+    font-size: 12px;
+    font-weight: 400;
+    padding-left:2px;
+}
+
+.bottom_pop .bottom_box {
+    padding: 18px 20px;
+}
+
+.bottom_pop .check_box input[type="checkbox"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+.bottom_pop .check_box input[type="checkbox"] + label {
+    font-size: 12px;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    align-items:center;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.bottom_pop .check_box input[type="checkbox"] + label:before {
+    content: ' ';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    line-height: 10px;
+    margin: 0px 6px 0 0;
+    text-align: center;
+    vertical-align: middle;
+    background: url(../img/common/checked.jpg) no-repeat center;
+}
+
+.bottom_pop .check_box input[type="checkbox"] + label:active:before,
+.bottom_pop .check_box input[type="checkbox"]:checked + label:active:before {
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+.bottom_pop .check_box input[type="checkbox"]:checked + label:before {
+    background: url(../img/common/checked_ov.svg) no-repeat center;
+}
+
+.bottom_pop .policy_list {
+    padding-top:6px;
+}
+
+.attendIp_pop .title {
+    margin-bottom: 16px;
+}
+
+.attendIp_pop .title h2 {
+    text-align: left;
+}
+
+.bottom_pop.alarm {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: inherit;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.bottom_pop.alarm .txt {
+    text-align:center;
+    padding:52px 0px 30px;
+    display:none;
+    background-color:#fff;
+    margin-bottom:0px;
+}
+
+.bottom_pop.alarm .txt::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: #ccc;
+    position: absolute;
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 4px;
+}
+
+.bottom_pop.alarm .txt h2 {
+    font-size:18px;
+    font-weight:600;
+    line-height:24px;
+    letter-spacing:-0.45px;
+    color:#333;
+}
+
+.bottom_pop.alarm .txt p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -0.35px;
+    color: #666;
+    margin-top:8px;
+}
+
+.bottom_pop.alarm .btn_confirm {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 52px;
+    height:52px;
+    letter-spacing: -0.35px;
+    background-color: #98a3f4;
+    color:#fff;
+    border:none;
+}
+/* footer */
+.footer {
+    max-width: 800px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.footer .sns_list {
+display:flex;
+background-color: #666;
+padding: 20px 0;
+}
+
+.footer .sns_list::after {
+content: "";
+display: block;
+clear: both;
+}
+
+.footer .sns_list li {
+flex:1;
+line-height: 20px;
+border-right: 1px solid #888;
+box-sizing: border-box;
+text-align: center;
+}
+
+.footer .sns_list li:last-child {
+border-right: 0;
+}
+
+    .footer .sns_list li a {
+        display: block;
+        padding: 0px 3px;
+    }    
+
+.footer .sns_list li a img {
+vertical-align: middle;
+}
+.footer .dvfooter {
+    background:#F8F8F8;
+    text-align: center;
+    
+}
+.footer .dvfooter img {width:100px;}
+.footer .dvfooter a {
+    display:block;
+    width:100%;
+    padding:14px 0;
+}
+.footer .bottom_logo {
+text-align: center;
+padding: 20px 0;
+}
+/* Base
+----------------------- */
+* {
+-webkit-text-size-adjust: none;
+-moz-text-size-adjust: none;
+-ms-text-size-adjust: none;
+text-size-adjust: none;
+}
+
+html, body {
+height: 100%;
+}
+
+html {
+font: 16px/1.2 "나눔명조","Nanum Myeongjo", "Malgun Gothic", "나눔고딕", "NanumGothic", "NanumGothicWEB", "돋움", Dotum, "굴림", Gulim, sans-serif;
+color: #666;
+letter-spacing: -1px;
+}
+
+html, button, input, select, textarea {
+font: 16px/1.2 "나눔명조","Nanum Myeongjo", "맑은 고딕", "Malgun Gothic", "나눔고딕", "NanumGothic", "NanumGothicWEB", "돋움", Dotum, "굴림", Gulim, sans-serif;
+color: #666;
+letter-spacing: -1px;
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video, input {
+margin: 0;
+padding: 0;
+vertical-align: baseline;
+}
+
+li {
+list-style: none;
+}
+/* Links
+----------------------- */
+a {
+text-decoration: none;
+}
+
+a:focus {
+outline: thin dotted;
+}
+
+a:active, a:hover {
+outline: 0;
+}
+
+/* Typography
+----------------------- */
+h1, h2, h3, h4, h5, h6 {
+font-weight: normal;
+}
+
+h1 {
+}
+
+h2 {
+}
+
+h3 {
+}
+
+h4 {
+}
+
+h5 {
+}
+
+h6 {
+}
+
+/* BGM 재생 버튼 */
+.bgm_play_btn {
+    width: 32px;
+    height: 32px;
+    background: url("https://static.barunsoncard.com/barunsonmcard/invitation/icon/ico_32_play_btn.svg")no-repeat;
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    border: none;
+    outline:none;
+    padding:0;
+    z-index:100;
+    cursor:pointer;
+}
+
+.bgm_play_btn.pause {
+    background: url("https://static.barunsoncard.com/barunsonmcard/invitation/icon/ico_32_pause_btn.svg")no-repeat;
+}
+

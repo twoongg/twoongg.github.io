@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="84" height="19" viewBox="0 0 84 19">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-1 {
+        font-size: 13px;
+        font-family: NotoSansKR-Regular, Noto Sans KR;
+        letter-spacing: -0.025em;
+      }
+
+      .cls-2 {
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <g id="카카오_공유" data-name="카카오 공유" transform="translate(0 -2.809)">
+    <text id="카카오_공유-2" data-name="카카오 공유" class="cls-1" transform="translate(22 17.809)"><tspan x="0" y="0">카카오 공유</tspan></text>
+    <path id="Logo_Kakao" data-name="Logo Kakao" class="cls-2" d="M11.1,3.154c-4.707,0-8.528,2.968-8.528,6.617A6.393,6.393,0,0,0,6.3,15.246l-.947,3.471a.35.35,0,0,0,.537.375l4.144-2.754c.35,0,.708.06,1.066.06,4.707,0,8.528-2.968,8.528-6.626S15.807,3.154,11.1,3.154Z" transform="translate(-2.572 1.655)"/>
+  </g>
+</svg>
