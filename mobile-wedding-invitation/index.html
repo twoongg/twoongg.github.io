@@ -21,9 +21,12 @@
     <meta name="color-scheme" content="light only">
     <meta name="supported-color-schemes" content="light">
     <style>
-        /* 시스템 다크모드 설정 무시 */
+        /* 시스템 다크모드 설정 무시 및 라이트모드 고정 */
         :root {
-            color-scheme: light;
+            color-scheme: light only;
+        }
+        html, body {
+            forced-color-adjust: none; /* 브라우저의 강제 색상 조정 방지 */
         }
         @media (prefers-color-scheme: dark) {
             body {
