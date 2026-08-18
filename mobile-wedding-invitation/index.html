@@ -45,7 +45,6 @@
             }
         }
     </style>
-    <link rel="stylesheet" type="text/css" href="css/extra_font.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/loader.css">
     <link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.min.css">
@@ -54,22 +53,18 @@
 
     <link rel="stylesheet" href="dist/css/photoswipe.css" />
     <link rel="stylesheet" href="css/swiper-bundle.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"><!--Noto Sans-->
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet"><!--나눔 고딕-->
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap" rel="stylesheet"><!--나눔 고딕 코딩-->
+    <!-- 폰트 — 실제로 쓰는 4종만 로드합니다.
+         국문 제목/본문: Gowun Batang, 보조: Nanum Myeongjo
+         영문/숫자: Cormorant Garamond, Cinzel
+         UI 보조: Noto Sans KR -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="css/nanum-myeongjo.css" rel="stylesheet"><!--나눔 명조-->
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet"> <!--나눔 펜 스크립트-->
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet"> <!--나눔 브러쉬 스크립트-->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"> <!--Cinzel-->
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:300" rel="stylesheet">
-    <link href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css" rel="stylesheet">
-    
-    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-barun-pen.css" rel="stylesheet">
-    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-barun-gothic.css" rel="stylesheet">
-    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
-    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
 
         <link rel="stylesheet" type="text/css" href="upload/template/MC3220/template.css">
+    <!-- 디자인 레이어 (항상 마지막에 로드) -->
+    <link rel="stylesheet" type="text/css" href="css/aesthetic.css">
 
     <!-- jQuery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
@@ -86,74 +81,60 @@
         <input type="hidden" id="eventDate" value="2027-01-30" />
 
             
-    <div id="area1" idx="1" class="templatearea bindarea" style="height:1423px; ">
-        
-    <div id="17249164" class="item ITC02" style="position:absolute; top:0px; left: 0px;">
-        <img class="img" src="upload/images/main_bg.jpg" style="width:800px; height:1423px;" alt="image" />
-    </div>
-
-
-
-        
-    <div id="17249165" class="item photo ITC03" style="position:absolute; top:0px; left: 0px; width:800px; height:915px;">
-        <img class="img" src="upload/images/main_photo_real.jpg" style="max-width:800px; max-height:915px; width:100%;" alt="photo"/>
-    </div>
-
-        
-    <div id="17249166" class="item ITC02" style="position:absolute; top:0px; left: 0px;">
-        <img class="img" src="upload/images/deco_02.png" style="width:800px; height:916px;" alt="image" />
-    </div>
-
-        
-    <div id="17249153" class="item ITC01" style="position:absolute; top:1044.8125px; left: 0px; width: 347.469px; height: 57.5px;align-items: center;">
-        <div class="text" style="font-family: 'Nanum Myeongjo', serif;color: #333333;font-size: 55px;font-weight: bold;text-align: right;letter-spacing: 0.37em;line-height: 1.4em;">
-            김태웅
+    <!-- 메인 (히어로)
+         기존에는 800px 캔버스 위 절대좌표라 좁은 화면에서 이름이 잘렸습니다.
+         일반 흐름 + flex 로 바꿔 어떤 폭에서도 잘리지 않습니다. -->
+    <header id="area1" class="hero">
+        <div class="hero__frame">
+            <img class="hero__img" src="upload/images/main_photo_real.jpg" alt="김태웅 박수진" />
+            <div class="hero__veil" aria-hidden="true"></div>
         </div>
-    </div>
 
-        
-    <div id="17249154" class="item ITC01" style="position:absolute; top:1045.8125px; left: 467.296875px; width: 332.672px; height: 54.5px;align-items: center;">
-        <div class="text" style="font-family: 'Nanum Myeongjo', serif;color: #333333;font-size: 55px;font-weight: bold;text-align: left;letter-spacing: 0.37em;line-height: 1.4em;">
-            박수진
+        <div class="hero__caption" data-stagger="0.14">
+            <p class="hero__eyebrow reveal">WE ARE GETTING MARRIED</p>
+
+            <div class="hero__names reveal">
+                <span class="hero__person">
+                    <span class="hero__role">GROOM</span>
+                    <span class="hero__name">김태웅</span>
+                </span>
+                <span class="hero__divider" aria-hidden="true"></span>
+                <span class="hero__person">
+                    <span class="hero__role">BRIDE</span>
+                    <span class="hero__name">박수진</span>
+                </span>
+            </div>
+
+            <p class="hero__meta reveal">
+                <strong>2027. 01. 30 SAT AM 11:00</strong>
+                상록아트홀 5층 아트홀
+            </p>
+
+            <div class="hero__scroll reveal" aria-hidden="true">
+                <span class="hero__scroll-line"></span>
+            </div>
         </div>
-    </div>
+    </header>
+    <!-- 인사말
+         'Love' 장식은 이미지(deco_03.png) 대신 실제 텍스트라 어떤 해상도에서도 선명합니다. -->
+    <section id="area2" class="greeting" data-stagger="0.16">
+        <p class="greeting__ornament reveal">Love</p>
 
-        
-    <div id="17249155" class="item ITC01" style="position:absolute; top:1172.8125px; left: 0px; width: 800px; height: 42px;align-items: center;">
-        <div class="text" style="font-family: 'Nanum Myeongjo', serif;color: #333333;font-size: 30px;text-align: center;letter-spacing: 0.08em;line-height: 1.4em;">
-            2027.01.30 SAT AM 11:00
-        </div>
-    </div>
-
-        
-    <div id="17249156" class="item ITC01" style="position:absolute; top:1225.8125px; left: 0px; width: 800px; height: 42px;align-items: center;">
-        <div class="text" style="font-family: 'Nanum Myeongjo', serif;color: #333333;font-size: 30px;text-align: center;letter-spacing: 0em;line-height: 1.4em;">
-            상록아트홀  5층 아트홀
-        </div>
-    </div>
-
-    </div>
-    <div id="area2" idx="2" class="templatearea bindarea" style="height:816px; background-color: #FFF5F2;">
-        
-    <div id="17249158" class="item ITC01" style="position:absolute; top:250.796875px; left: 0px; width: 800px; height: 564.188px;background-color: #FFF5F2;align-items: flex-start;">
-        <div class="text" style="font-family: 'Nanum Myeongjo', serif;color: #000000;font-size: 30px;text-align: center;letter-spacing: 0em;line-height: 2.3em;">
-            유난히 차가운 공기도 <br>서로의 온기로 따스하게 느껴지는 1월,<br>저희 두 사람이 사랑이라는 이름으로<br>하나의 길을 걸어가려 합니다.<br><br>새해의 시작을 축복해 주시는 마음 <br>평생 소중히 간직하며 예쁘게 살겠습니다.<br>귀한 걸음으로 함께해 주시면 감사하겠습니다.<br>(Written by Gemini)
-        </div>
-    </div>
-
-        
-    <div id="17249163" class="item ITC02" style="position:absolute; top:0px; left: 0px;">
-        <img class="img" src="upload/images/deco_03.png" style="width:800px; height:254px;" alt="image" />
-    </div>
-
-    </div>
+        <p class="greeting__body reveal">
+            유난히 차가운 공기도 <br>서로의 온기로 따스하게 느껴지는 1월,<br>저희 두 사람이 사랑이라는 이름으로<br>하나의 길을 걸어가려 합니다.
+        </p>
+        <p class="greeting__body reveal">
+            새해의 시작을 축복해 주시는 마음 <br>평생 소중히 간직하며 예쁘게 살겠습니다.<br>귀한 걸음으로 함께해 주시면 감사하겠습니다.
+        </p>
+        <p class="greeting__sign reveal">(Written by Gemini)</p>
+    </section>
 
     <!-- 연락처 타이틀 이미지 -->
         <div id="area3" idx="3" class="templatearea bindarea" style="height:0px; ">
         </div>
     <!-- 연락처  -->
-    <div id="area4" idx="4" class="call">
-        <div class="grid_box" >
+    <div id="area4" idx="4" class="call" data-stagger="0.12">
+        <div class="grid_box reveal">
             <dl>
                 <dt>
                     <span class="blue">신랑</span>
@@ -169,7 +150,7 @@
                 <dd><a href="sms:01089610598"><img src="img/icons/ico_sms.svg" width="24" alt="SMS 아이콘" /></a></dd>
             </dl>
         </div>
-            <section class="onoff_2">
+            <section class="onoff_2 reveal">
                 <div class="list_wrap">
                     <button type="button" class="info_detail">정보 더보기</button>
                     <ul class="grid_box">
@@ -243,6 +224,38 @@
     </div>
     <!-- //신랑 & 신부 연락 -->
 
+    <!-- 예식일 — 달력 · 카운트다운 · 함께한 시간
+         달력과 타이머는 js/aesthetic.js 가 그립니다.
+         날짜를 바꾸려면 그 파일 상단의 WEDDING_AT / ANNIVERSARY_AT 만 고치면 됩니다. -->
+    <section class="wedding-day" data-stagger="0.13">
+        <div class="sec-head reveal">
+            <span class="sec-head__en">The Wedding Day</span>
+            <span class="sec-head__rule" aria-hidden="true"></span>
+            <span class="sec-head__kr">예식 안내</span>
+        </div>
+
+        <div class="wd__inner">
+            <p class="wd__headline reveal">
+                <strong>2027. 01. 30</strong>
+                토요일 오전 11시
+            </p>
+
+            <div class="wd__cal reveal" id="wdCal"></div>
+
+            <div class="wd__timers">
+                <div class="reveal">
+                    <div class="wd__dday" id="wdDday"></div>
+                    <p class="wd__sentence" id="wdSentence"></p>
+                </div>
+
+                <div class="wd__since reveal">
+                    <p class="wd__label">우리가 함께한 지</p>
+                    <p class="wd__count" id="wdSince"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     
     <!-- 배경음악 재생 부분 주석 처리
@@ -256,13 +269,11 @@
 
     
 <section>
-    <!-- 갤러리 타이틀 이미지 -->
-        <div id="area5" idx="5" class="templatearea bindarea" style="height:183px; ">
-                
-    <div id="17249159" class="item ITC02" style="position:absolute; top:0px; left: 0px;">
-        <img class="img" src="upload/images/tit_gallery.png" style="width:800px; height:183px;" alt="image" />
-    </div>
-
+    <!-- 갤러리 타이틀 (이미지 → 텍스트: 고해상도에서도 선명하고 폭에 맞춰 늘어납니다) -->
+        <div id="area5" class="sec-head reveal">
+            <span class="sec-head__en">Gallery</span>
+            <span class="sec-head__rule" aria-hidden="true"></span>
+            <span class="sec-head__kr">우리의 순간들</span>
         </div>
     <!-- 갤러리 -->
     <div id="area6" idx="6">
@@ -272,96 +283,99 @@
                     <div class="gallery_type01">
                         <div class="skin_gallery">
                                 <figure>
-                                    <a href="upload/gallery/photo_1.jpg" style="background: url(upload/gallery/photo_2.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1191.8518" class="setimgsize">
+                                    <a href="upload/gallery/photo_1.jpg" style="background: url(upload/gallery/photo_1.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1191.8518" class="setimgsize">
                                         <img src="img/skin/img_frame.png" class="img_frame" itemprop="thumbnail" alt="">
                                     </a> 
                                 </figure>
                                 <figure>
-                                    <a href="upload/gallery/photo_3.jpg" style="background: url(upload/gallery/photo_4.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1200" class="setimgsize">
+                                    <a href="upload/gallery/photo_3.jpg" style="background: url(upload/gallery/photo_3.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1200" class="setimgsize">
                                         <img src="img/skin/img_frame.png" class="img_frame" itemprop="thumbnail" alt="">
                                     </a> 
                                 </figure>
                                 <figure>
-                                    <a href="upload/gallery/photo_5.jpg" style="background: url(upload/gallery/photo_6.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1200" class="setimgsize">
+                                    <a href="upload/gallery/photo_5.jpg" style="background: url(upload/gallery/photo_5.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1200" class="setimgsize">
                                         <img src="img/skin/img_frame.png" class="img_frame" itemprop="thumbnail" alt="">
                                     </a> 
                                 </figure>
                                 <figure>
-                                    <a href="upload/gallery/photo_7.jpg" style="background: url(upload/gallery/photo_8.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x964.4444" class="setimgsize">
+                                    <a href="upload/gallery/photo_7.jpg" style="background: url(upload/gallery/photo_7.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x964.4444" class="setimgsize">
                                         <img src="img/skin/img_frame.png" class="img_frame" itemprop="thumbnail" alt="">
                                     </a> 
                                 </figure>
                                 <figure>
-                                    <a href="upload/gallery/photo_9.jpg" style="background: url(upload/gallery/photo_10.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1200" class="setimgsize">
+                                    <a href="upload/gallery/photo_9.jpg" style="background: url(upload/gallery/photo_9.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1200" class="setimgsize">
                                         <img src="img/skin/img_frame.png" class="img_frame" itemprop="thumbnail" alt="">
                                     </a> 
                                 </figure>
                                 <figure>
-                                    <a href="upload/gallery/photo_11.jpg" style="background: url(upload/gallery/photo_12.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1200" class="setimgsize">
+                                    <a href="upload/gallery/photo_11.jpg" style="background: url(upload/gallery/photo_11.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1200" class="setimgsize">
                                         <img src="img/skin/img_frame.png" class="img_frame" itemprop="thumbnail" alt="">
                                     </a> 
                                 </figure>
                                 <figure>
-                                    <a href="upload/gallery/photo_13.jpg" style="background: url(upload/gallery/photo_14.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1200" class="setimgsize">
+                                    <a href="upload/gallery/photo_13.jpg" style="background: url(upload/gallery/photo_13.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1200" class="setimgsize">
                                         <img src="img/skin/img_frame.png" class="img_frame" itemprop="thumbnail" alt="">
                                     </a> 
                                 </figure>
                                 <figure>
-                                    <a href="upload/gallery/photo_15.jpg" style="background: url(upload/gallery/photo_16.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1200" class="setimgsize">
+                                    <a href="upload/gallery/photo_15.jpg" style="background: url(upload/gallery/photo_15.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1200" class="setimgsize">
                                         <img src="img/skin/img_frame.png" class="img_frame" itemprop="thumbnail" alt="">
                                     </a> 
                                 </figure>
                                 <figure>
-                                    <a href="upload/gallery/photo_17.jpg" style="background: url(upload/gallery/photo_18.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1200" class="setimgsize">
+                                    <a href="upload/gallery/photo_17.jpg" style="background: url(upload/gallery/photo_17.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1200" class="setimgsize">
                                         <img src="img/skin/img_frame.png" class="img_frame" itemprop="thumbnail" alt="">
                                     </a> 
                                 </figure>
                                 <figure>
-                                    <a href="upload/gallery/photo_19.jpg" style="background: url(upload/gallery/photo_20.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1200" class="setimgsize">
+                                    <a href="upload/gallery/photo_19.jpg" style="background: url(upload/gallery/photo_19.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1200" class="setimgsize">
                                         <img src="img/skin/img_frame.png" class="img_frame" itemprop="thumbnail" alt="">
                                     </a> 
                                 </figure>
                                 <figure>
-                                    <a href="upload/gallery/photo_21.jpg" style="background: url(upload/gallery/photo_22.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1200" class="setimgsize">
+                                    <a href="upload/gallery/photo_21.jpg" style="background: url(upload/gallery/photo_21.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1200" class="setimgsize">
                                         <img src="img/skin/img_frame.png" class="img_frame" itemprop="thumbnail" alt="">
                                     </a> 
                                 </figure>
                                 <figure>
-                                    <a href="upload/gallery/photo_23.jpg" style="background: url(upload/gallery/photo_24.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1118.5184" class="setimgsize">
+                                    <a href="upload/gallery/photo_23.jpg" style="background: url(upload/gallery/photo_23.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1118.5184" class="setimgsize">
                                         <img src="img/skin/img_frame.png" class="img_frame" itemprop="thumbnail" alt="">
                                     </a> 
                                 </figure>
                                 <figure>
-                                    <a href="upload/gallery/photo_25.jpg" style="background: url(upload/gallery/photo_26.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1056.2963" class="setimgsize">
+                                    <a href="upload/gallery/photo_25.jpg" style="background: url(upload/gallery/photo_25.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1056.2963" class="setimgsize">
                                         <img src="img/skin/img_frame.png" class="img_frame" itemprop="thumbnail" alt="">
                                     </a> 
                                 </figure>
                                 <figure>
-                                    <a href="upload/gallery/photo_27.jpg" style="background: url(upload/gallery/photo_28.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1200" class="setimgsize">
+                                    <a href="upload/gallery/photo_27.jpg" style="background: url(upload/gallery/photo_27.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1200" class="setimgsize">
                                         <img src="img/skin/img_frame.png" class="img_frame" itemprop="thumbnail" alt="">
                                     </a> 
                                 </figure>
                                 <figure>
-                                    <a href="upload/gallery/photo_29.jpg" style="background: url(upload/gallery/photo_30.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1200" class="setimgsize">
+                                    <a href="upload/gallery/photo_29.jpg" style="background: url(upload/gallery/photo_29.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1200" class="setimgsize">
                                         <img src="img/skin/img_frame.png" class="img_frame" itemprop="thumbnail" alt="">
                                     </a> 
                                 </figure>
                                 <figure>
-                                    <a href="upload/gallery/photo_31.jpg" style="background: url(upload/gallery/photo_32.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1200" class="setimgsize">
+                                    <a href="upload/gallery/photo_31.jpg" style="background: url(upload/gallery/photo_31.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1200" class="setimgsize">
                                         <img src="img/skin/img_frame.png" class="img_frame" itemprop="thumbnail" alt="">
                                     </a> 
                                 </figure>
                                 <figure>
-                                    <a href="upload/gallery/photo_33.jpg" style="background: url(upload/gallery/photo_34.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1174.074" class="setimgsize">
+                                    <a href="upload/gallery/photo_33.jpg" style="background: url(upload/gallery/photo_33.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1174.074" class="setimgsize">
                                         <img src="img/skin/img_frame.png" class="img_frame" itemprop="thumbnail" alt="">
                                     </a> 
                                 </figure>
                                 <figure>
-                                    <a href="upload/gallery/photo_35.jpg" style="background: url(upload/gallery/photo_36.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1206.6666" class="setimgsize">
+                                    <a href="upload/gallery/photo_35.jpg" style="background: url(upload/gallery/photo_35.jpg) no-repeat center center" itemprop="contentUrl" data-size="800x1206.6666" class="setimgsize">
                                         <img src="img/skin/img_frame.png" class="img_frame" itemprop="thumbnail" alt="">
                                     </a> 
                                 </figure>
                         </div>
+                        <!-- 처음에는 9장만 보여주고 나머지는 클릭 시 표시합니다.
+                             (숨겨진 사진은 배경 이미지도 내려받지 않아 초기 로딩이 가벼워집니다) -->
+                        <button type="button" class="gallery__more">사진 더보기</button>
                         <!-- 갤러리 확대 -->
                         <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
                             <div class="pswp__bg"></div>
@@ -402,18 +416,16 @@
     </div>
 </section>
     
-<!-- 오시는 타이틀 이미지 -->
-    <div id="area9" idx="9" class="templatearea bindarea" style="height:183px; ">
-            
-    <div id="17249161" class="item ITC02" style="position:absolute; top:0px; left: 0px;">
-        <img class="img" src="upload/images/tit_location.png" style="width:800px; height:183px;" alt="image" />
-    </div>
-
+<!-- 오시는 길 타이틀 -->
+    <div id="area9" class="sec-head reveal" style="background:var(--paper-warm);">
+        <span class="sec-head__en">Location</span>
+        <span class="sec-head__rule" aria-hidden="true"></span>
+        <span class="sec-head__kr">오시는 길</span>
     </div>
 <!-- 오시는 길 -->
-<div id="area10" idx="10" class="location line">
+<div id="area10" idx="10" class="location line" data-stagger="0.12">
     <div class="area">
-        <div class="map_info">
+        <div class="map_info reveal">
             <dl class="map_title">
                 <dt>
                     <span>상록아트홀</span>
@@ -429,7 +441,7 @@
                     <a href="tel:02-564-5757" class="call_btn">전화</a>
             </div>
         </div>
-                <div class="map_wrap" style="padding: 10px;">
+                <div class="map_wrap reveal">
                     <!-- 네이버 지도가 그려질 영역 -->
                     <div id="map" style="width:100%; height:450px; border-radius: 8px; border: 1px solid #eee;"></div>
                 </div>
@@ -466,7 +478,7 @@
                     });
                 </script>
                 <!-- 위치 네비게이션 -->
-                <div class="navigation">
+                <div class="navigation reveal">
                     <ul>
                         <li>
                             <a href="javascript:TMAP.send('서울 강남구 언주로 508', 127.043142, 37.503927);"><img src="img/icons/tmap.png" /> 티맵</a>
@@ -484,7 +496,7 @@
 </div>
     <!-- 기타정보 -->
 <div id="area11" idx="11" class="etcarea">
-    <div class="etc_info">
+    <div class="etc_info reveal">
         <ul>
                 <li>
                     <strong>ATM 안내</strong>
@@ -736,14 +748,12 @@
 
         <!-- 신랑 & 신부에게 마음 전하기 -->
     <div class="remittance">
-            <div id="area12" idx="12" class="templatearea bindarea" style="height:223px; ">
-                    
-    <div id="17249157" class="item ITC02" style="position:absolute; top:0px; left: 0px;">
-        <img class="img" src="img/title/tit_remittance.png" style="width:800px; height:223px;" alt="image" />
-    </div>
-
+            <div id="area12" class="sec-head reveal">
+                <span class="sec-head__en">With Heart</span>
+                <span class="sec-head__rule" aria-hidden="true"></span>
+                <span class="sec-head__kr">마음 전하실 곳</span>
             </div>
-        <div id="area13" idx="13" class="btn_wrap">
+        <div id="area13" idx="13" class="btn_wrap reveal">
                     <a href="index.html#" class="btn an_btn type03 groom" data-idx="1">신랑 측 계좌번호</a>
                     <a href="index.html#" class="btn an_btn type03 bride" data-idx="2">신부 측 계좌번호</a>
         </div>
@@ -894,7 +904,7 @@
 
         <!-- 화환 선물 -->
 <div class="flowergiftsub">
-    <div class="btn_wrap">
+    <div class="btn_wrap reveal">
         <a href="waiting.html" target="_blank" class="btn fl_btn type03 flower" data-idx="3">
                 화환 보내기
         </a>
@@ -911,15 +921,15 @@
 
         
         <!-- footer -->
-        <footer class="footer">
+        <footer class="footer" data-stagger="0.1">
             <input type="hidden" id="url" value="https://mcard.barunsoncard.com/m/" />
-            <ul class="sns_list">
+            <ul class="sns_list reveal">
                     <li><a href="javascript:addToCalendar();"><img src="img/icons/register_calendar.svg" alt="일정 등록"></a></li>
                 <li><a href="javascript:copyInvitationLink();"><img src="img/icons/copy_link.svg" alt="링크복사"></a></li>
                 
                     <li><a href="javascript:shareMessage();" id="kakao-link-btn"><img src="img/icons/share_kakao.svg" alt="카카오톡"></a></li>
             </ul>
-            <div class="dvfooter">
+            <div class="dvfooter reveal">
                 <p style="font-family: 'Nanum Myeongjo', serif; font-size: 14px; color: #888; letter-spacing: 0.1em; margin-top: 20px;">
                     © 2026. 김태웅 all rights reserved.
                 </p>
@@ -931,6 +941,7 @@
         <!-- //footer -->
         </div>
 
+    <script type="text/javascript" src="js/aesthetic.js"></script>
     <script type="text/javascript" src="js/m2page.js"></script>
     <script type="text/javascript" src="js/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="dist/js/photoswipe.js"></script>

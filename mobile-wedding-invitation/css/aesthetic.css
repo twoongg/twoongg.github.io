@@ -1,0 +1,958 @@
+@charset "UTF-8";
+/* ============================================================
+   aesthetic.css — 청첩장 디자인 레이어
+   기존 템플릿 CSS(style.css, m2page.css) 위에 덧씌우는 레이어입니다.
+   색·타이포·여백은 아래 토큰만 고치면 전체가 따라옵니다.
+   ============================================================ */
+
+:root {
+    /* 색 */
+    --paper:       #ffffff;   /* 기본 배경 */
+    --paper-warm:  #fdf6f3;   /* 섹션 배경 (웜 아이보리) */
+    --paper-deep:  #f7ebe6;   /* 한 단계 더 진한 면 */
+    --ink:         #2f2a27;   /* 제목·이름 */
+    --ink-body:    #554d48;   /* 본문 */
+    --ink-soft:    #8b807a;   /* 보조 텍스트 */
+    --ink-faint:   #b3a9a3;   /* 라벨·캡션 */
+    --accent:      #c2836f;   /* 로즈 브라운 (포인트) */
+    --accent-soft: #e6b6a5;
+    --line:        #e9ddd7;   /* 구분선 */
+
+    /* 타이포 */
+    --font-kr: 'Gowun Batang', 'Nanum Myeongjo', serif;
+    --font-en: 'Cormorant Garamond', 'Cinzel', 'Gowun Batang', serif;
+    --font-ui: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* 리듬 */
+    --sec-pad: 72px;          /* 섹션 상하 여백 */
+    --gut: 8%;                /* 좌우 여백 */
+    --ease: cubic-bezier(.22,.68,.28,1);
+}
+
+/* ── 기본 ──────────────────────────────────────────────── */
+/* 원본 템플릿은 content-box 기준이라 padding 을 주면 폭이 넘쳤습니다
+   (연락처 카드가 화면 밖으로 밀려나던 원인). 전역을 border-box 로 맞추고
+   자체 계산이 필요한 PhotoSwipe 만 예외로 둡니다. */
+#wrap, #wrap *, #wrap *::before, #wrap *::after { box-sizing: border-box; }
+.pswp, .pswp *, .pswp *::before, .pswp *::after { box-sizing: content-box; }
+
+/* Cormorant/Cinzel 은 기본이 옛날식 숫자(oldstyle)라 아래위로 들쭉날쭉합니다.
+   날짜·시간처럼 줄 맞춤이 중요한 곳은 라이닝 + 고정폭 숫자로 고정합니다. */
+.hero__meta strong,
+.wd__headline strong,
+.wd__cal th, .wd__cal td,
+.wd__num, .wd__sentence, .wd__count {
+    font-variant-numeric: lining-nums tabular-nums;
+    font-feature-settings: "lnum" 1, "tnum" 1;
+}
+
+html, body {
+    background: var(--paper);
+    color: var(--ink-body);
+    font-family: var(--font-kr);
+    letter-spacing: 0;
+    -webkit-font-smoothing: antialiased;
+}
+#wrap {
+    background: var(--paper);
+    overflow-x: hidden;
+}
+img { max-width: 100%; }
+
+/* ── 스크롤 등장 애니메이션 ─────────────────────────────── */
+.reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition:
+        opacity 1.05s var(--ease) var(--reveal-delay, 0s),
+        transform 1.05s var(--ease) var(--reveal-delay, 0s);
+    will-change: opacity, transform;
+}
+.reveal.is-in { opacity: 1; transform: none; }
+
+/* 애니메이션을 원치 않는 사용자 */
+@media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .hero__scroll-line::after { animation: none; }
+}
+
+/* ── 섹션 헤더 (기존 타이틀 이미지 대체) ─────────────────── */
+.sec-head {
+    text-align: center;
+    padding: var(--sec-pad) var(--gut) 34px;
+}
+.sec-head__en {
+    display: block;
+    font-family: var(--font-en);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: .42em;
+    text-indent: .42em;           /* 자간 때문에 오른쪽으로 밀리는 것 보정 */
+    color: var(--accent);
+    text-transform: uppercase;
+}
+.sec-head__rule {
+    display: block;
+    width: 1px;
+    height: 34px;
+    margin: 16px auto;
+    background: linear-gradient(to bottom, var(--accent-soft), transparent);
+}
+.sec-head__kr {
+    display: block;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    color: var(--ink);
+}
+
+/* ============================================================
+   1. 히어로
+   ============================================================ */
+.hero {
+    position: relative;
+    background: var(--paper);
+    padding-bottom: 56px;
+    overflow: hidden;
+}
+.hero__frame {
+    position: relative;
+    overflow: hidden;
+}
+/* template.css 의 `#area1 img {display:table; width:100%}` 는 ID 선택자라
+   클래스 규칙으로는 못 이깁니다. 그 상태에서는 이미지가 517px 로 부풀어
+   레이아웃 뷰포트 전체를 500px 로 넓혔고, 그래서 오른쪽이 잘렸습니다. */
+#area1 img.hero__img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    /* 로딩 직후 아주 살짝 줌아웃되며 자리를 잡습니다 */
+    animation: heroIn 1.8s var(--ease) both;
+}
+@keyframes heroIn {
+    from { transform: scale(1.07); opacity: 0; }
+    to   { transform: scale(1);    opacity: 1; }
+}
+/* 사진 하단을 종이색으로 자연스럽게 흘려보냅니다 */
+.hero__veil {
+    position: absolute;
+    left: 0; right: 0; bottom: -1px;
+    height: 22%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, var(--paper) 88%);
+    pointer-events: none;
+}
+
+.hero__caption {
+    position: relative;
+    z-index: 2;
+    padding: 30px var(--gut) 0;
+    text-align: center;
+}
+.hero__eyebrow {
+    font-family: var(--font-en);
+    font-size: 11px;
+    letter-spacing: .34em;
+    text-indent: .34em;
+    color: var(--ink-faint);
+    margin-bottom: 32px;
+}
+.hero__names {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(14px, 5vw, 30px);
+}
+.hero__person {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+.hero__role {
+    font-family: var(--font-en);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .3em;
+    text-indent: .3em;
+    color: var(--accent);
+}
+.hero__name {
+    font-size: clamp(26px, 8.2vw, 36px);
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-indent: .16em;           /* 자간으로 인한 우측 잘림 방지 */
+    color: var(--ink);
+    white-space: nowrap;
+}
+/* 이름 사이 세로 실선 — 원본 배경 이미지에 그려져 있던 구분선을 CSS로 옮겼습니다 */
+.hero__divider {
+    align-self: flex-end;
+    width: 1px;
+    height: 42px;
+    margin-bottom: 4px;
+    background: linear-gradient(to bottom, transparent, var(--accent-soft) 30%, var(--accent-soft) 70%, transparent);
+}
+.hero__meta {
+    margin-top: 34px;
+    font-size: 16px;
+    line-height: 1.9;
+    letter-spacing: .05em;
+    color: var(--ink-body);
+}
+.hero__meta strong {
+    display: block;
+    font-family: var(--font-en);
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: .12em;
+    color: var(--ink);
+}
+
+/* 스크롤 유도 */
+.hero__scroll {
+    margin-top: 44px;
+    text-align: center;
+}
+.hero__scroll-line {
+    display: inline-block;
+    position: relative;
+    width: 1px;
+    height: 46px;
+    background: var(--line);
+    overflow: hidden;
+}
+.hero__scroll-line::after {
+    content: "";
+    position: absolute;
+    left: 0; top: 0;
+    width: 1px; height: 16px;
+    background: var(--accent);
+    animation: scrollHint 2.1s var(--ease) infinite;
+}
+@keyframes scrollHint {
+    0%   { transform: translateY(-16px); opacity: 0; }
+    35%  { opacity: 1; }
+    100% { transform: translateY(46px);  opacity: 0; }
+}
+
+/* 하트 로티(template.js) — 사진 위에만, 은은하게 */
+#area1 #lottieBox {
+    aspect-ratio: 800 / 1423;
+    opacity: .38;
+    pointer-events: none;
+}
+
+/* ============================================================
+   2. 인사말
+   ============================================================ */
+.greeting {
+    background: var(--paper-warm);
+    text-align: center;
+    padding: calc(var(--sec-pad) + 10px) var(--gut) calc(var(--sec-pad) + 10px);
+}
+.greeting__ornament {
+    font-family: var(--font-en);
+    font-size: 40px;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent-soft);
+    line-height: 1;
+    margin-bottom: 40px;
+}
+.greeting__body {
+    font-size: 16px;
+    line-height: 2.35;
+    letter-spacing: .01em;
+    color: var(--ink-body);
+    word-break: keep-all;
+}
+.greeting__body + .greeting__body { margin-top: 1.9em; }
+
+.greeting__sign {
+    margin-top: 44px;
+    font-size: 14px;
+    letter-spacing: .1em;
+    color: var(--ink-soft);
+}
+
+/* ============================================================
+   3. 연락처 (.call) — 기존 마크업 재스타일링
+   ============================================================ */
+.call {
+    background: var(--paper-warm);
+    padding: 0 var(--gut) calc(var(--sec-pad) - 8px);
+}
+.call .grid_box {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+.call dl {
+    flex: 1 1 0;
+    width: auto;          /* style.css 의 width:100% 해제 */
+    min-width: 0;
+    max-width: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    background: rgba(255,255,255,.72);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 13px 8px;
+}
+.call dl:after { display: none; }
+.call dl dt { margin: 0; }
+.call dl dt .blue,
+.call dl dt span {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    color: var(--ink);
+}
+.call dl dd { margin: 0; display: flex; align-items: center; }
+.call dl dd img { width: 20px; height: auto; opacity: .8; }
+
+.call .list_wrap { border: 0; margin-top: 22px; padding-top: 0; }
+.call .list_wrap:after { display: none; }
+
+/* 원본의 .info_detail 은 text-indent:-9999999px 로 글자를 숨기고
+   바른손 서버의 12px 화살표 아이콘만 띄우는 버튼이었습니다.
+   (외부 아이콘이 안 뜨면 사실상 보이지 않는 버튼) → 글자 버튼으로 되돌립니다. */
+.call .info_detail,
+.call .list_wrap.on .info_detail {
+    position: static;
+    display: block;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    padding: 8px 16px;
+    background: none;
+    border: 0;
+    transform: none;
+    text-indent: 0;
+    font-family: var(--font-kr);
+    font-size: 0;                 /* 상태에 따라 ::before 로 문구를 바꿉니다 */
+    letter-spacing: .06em;
+    color: var(--ink-soft);
+    cursor: pointer;
+}
+.call .info_detail::before {
+    content: "혼주 정보 접기";
+    font-size: 14px;
+}
+.call .list_wrap.on .info_detail::before { content: "혼주 정보 보기"; }
+.call .info_detail::after {
+    content: "";
+    display: inline-block;
+    width: 6px; height: 6px;
+    margin: -3px 0 0 8px;
+    border-right: 1px solid var(--ink-soft);
+    border-bottom: 1px solid var(--ink-soft);
+    transform: rotate(45deg);
+    vertical-align: middle;
+    transition: transform .3s var(--ease);
+}
+.call .list_wrap.on .info_detail::after { transform: rotate(-135deg); margin-top: 1px; }
+
+.call .list_wrap ul.grid_box {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 18px;
+}
+.call .list_wrap li {
+    background: rgba(255,255,255,.72);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 18px 14px;
+    text-align: center;
+}
+.call .list_wrap h3 {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    color: var(--accent);
+    margin-bottom: 12px;
+}
+.call .list_wrap .list_con {
+    display: block;
+    padding: 10px 0;
+}
+.call .list_wrap .list_con:not(:last-child) { border-bottom: 1px solid var(--line); }
+.call .list_wrap .list_con p { display: block; font-size: 14px; color: var(--ink-body); }
+.call .list_wrap .list_con .name { font-weight: 700; color: var(--ink); }
+.call .list_wrap .btn_wrap {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 10px;
+}
+.call .list_wrap .btn_wrap a { opacity: .75; }
+
+/* ============================================================
+   4. 예식일 — 달력 + 카운트다운 (신규)
+   ============================================================ */
+.wedding-day {
+    background: var(--paper);
+    padding-bottom: 18px;
+}
+.wd__inner { padding: 0 var(--gut); }
+
+.wd__headline {
+    text-align: center;
+    font-size: 17px;
+    letter-spacing: .06em;
+    color: var(--ink);
+    margin-bottom: 34px;
+}
+.wd__headline strong {
+    display: block;
+    font-family: var(--font-en);
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: .1em;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+/* 달력 */
+.wd__cal {
+    max-width: 340px;
+    margin: 0 auto;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 22px 0 24px;
+}
+.wd__cal table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+.wd__cal th {
+    font-family: var(--font-en);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    color: var(--ink-faint);
+    padding-bottom: 14px;
+}
+.wd__cal th.is-sun { color: var(--accent-soft); }
+.wd__cal td {
+    font-family: var(--font-en);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--ink-body);
+    text-align: center;
+    padding: 7px 0;
+}
+.wd__cal td.is-sun { color: var(--accent-soft); }
+.wd__cal td.is-empty { color: transparent; }
+.wd__cal .wd__mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+    position: relative;
+}
+/* 결혼식 날짜에 은은한 링 */
+.wd__cal .wd__mark::before {
+    content: "";
+    position: absolute;
+    inset: -5px;
+    border: 1px solid var(--accent-soft);
+    border-radius: 50%;
+}
+
+/* 카운트다운 / 카운트업 */
+.wd__timers {
+    max-width: 360px;
+    margin: 34px auto 0;
+    text-align: center;
+}
+.wd__label {
+    font-size: 13px;
+    letter-spacing: .1em;
+    color: var(--ink-soft);
+    margin-bottom: 12px;
+}
+.wd__dday {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+.wd__unit {
+    flex: 1 1 0;
+    background: var(--paper-warm);
+    border-radius: 12px;
+    padding: 14px 4px 12px;
+}
+.wd__num {
+    display: block;
+    font-family: var(--font-en);
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+    line-height: 1.1;
+}
+.wd__cap {
+    display: block;
+    font-size: 11px;
+    letter-spacing: .1em;
+    color: var(--ink-faint);
+    margin-top: 6px;
+}
+.wd__sentence {
+    margin-top: 26px;
+    font-size: 15px;
+    line-height: 1.9;
+    letter-spacing: .02em;
+    color: var(--ink-body);
+    word-break: keep-all;
+}
+.wd__sentence b {
+    font-weight: 700;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+}
+
+.wd__since {
+    margin-top: 34px;
+    padding-top: 26px;
+    border-top: 1px solid var(--line);
+    text-align: center;
+}
+.wd__since .wd__count {
+    font-size: 15px;
+    line-height: 1.9;
+    letter-spacing: .02em;
+    color: var(--ink-body);
+    font-variant-numeric: tabular-nums;
+}
+.wd__since .wd__count b { font-weight: 700; color: var(--ink); }
+
+/* ============================================================
+   5. 갤러리
+   ============================================================ */
+.gallery { background: var(--paper); }
+.gallery .area { padding: 0 var(--gut) var(--sec-pad); }
+
+.skin_gallery {
+    display: grid;
+    /* minmax(0,1fr) — 1fr 이 콘텐츠 최소폭에 밀려 컨테이너 밖으로
+       삐져나가던 문제(우측 열 잘림)를 막습니다. */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+}
+.skin_gallery figure { min-width: 0; }
+.skin_gallery figure a {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-position: center center !important;
+    background-size: cover !important;
+    border-radius: 3px;
+    overflow: hidden;
+    transition: transform .5s var(--ease), filter .5s var(--ease);
+}
+.skin_gallery figure a:active { transform: scale(.97); filter: brightness(.94); }
+/* 프레임 이미지는 이제 보이지 않지만, PhotoSwipe 가 확대 애니메이션의 시작
+   좌표를 이 <img> 의 위치에서 읽어옵니다. display:none 으로 지우면 확대가
+   화면 좌상단(0,0)에서 튀어나오므로, 자리는 유지한 채 투명하게만 만듭니다. */
+.skin_gallery figure .img_frame {
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+/* 처음에는 9장만 — 나머지는 '더보기' 전까지 로드조차 하지 않습니다 */
+.skin_gallery:not(.is-expanded) figure:nth-of-type(n+10) { display: none; }
+
+.gallery__more {
+    display: block;
+    margin: 26px auto 0;
+    padding: 13px 34px;
+    background: none;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-family: var(--font-kr);
+    font-size: 14px;
+    letter-spacing: .08em;
+    color: var(--ink-body);
+    cursor: pointer;
+    transition: background .3s var(--ease), border-color .3s var(--ease);
+}
+.gallery__more:active { background: var(--paper-warm); border-color: var(--accent-soft); }
+.gallery__more.is-hidden { display: none; }
+
+/* ============================================================
+   6. 오시는 길
+   ============================================================ */
+.location { background: var(--paper-warm); }
+.location .area { padding: 0 var(--gut) 4px; }
+
+.location .map_info .map_title dt {
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    color: var(--ink);
+    margin-bottom: 12px;
+}
+.location .map_info .map_title dt span:not(:first-child)::before {
+    content: "·";
+    margin: 0 8px;
+    color: var(--ink-faint);
+    font-weight: 400;
+}
+.location .map_info .map_title dd {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--ink-soft);
+    letter-spacing: .02em;
+}
+
+.location .location_button_box { margin: 22px 0 24px; }
+.location .location_button_box a {
+    width: auto;
+    min-width: 104px;
+    height: 42px;
+    line-height: 40px;
+    padding: 0 20px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(255,255,255,.8) !important;   /* 바른손 외부 아이콘 URL 제거 */
+    font-family: var(--font-kr);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: .06em;
+    color: var(--ink-body);
+    text-indent: 0;
+    box-sizing: border-box;
+}
+.location .location_button_box a::before {
+    content: "";
+    display: inline-block;
+    width: 15px; height: 15px;
+    margin: -2px 7px 0 0;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: .75;
+}
+.location .location_button_box .map_btn::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c2836f' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E");
+}
+.location .location_button_box .call_btn::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c2836f' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z'/%3E%3C/svg%3E");
+}
+
+.location .map_wrap { padding: 0 !important; }
+.location #map {
+    border: 1px solid var(--line) !important;
+    border-radius: 14px !important;
+    height: 320px !important;
+    overflow: hidden;
+}
+
+.location .navigation {
+    padding: 22px 0 6px;
+}
+.location .navigation ul {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+}
+.location .navigation ul li {
+    float: none;
+    margin: 0;
+    padding: 0;
+    flex: 0 1 auto;
+}
+.location .navigation ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 14px;
+    background: rgba(255,255,255,.8);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-family: var(--font-kr);
+    font-size: 13px;
+    letter-spacing: .01em;
+    color: var(--ink-body);
+    white-space: nowrap;      /* '카카오내 비' 처럼 두 줄로 쪼개지지 않게 */
+}
+.location .navigation ul li img { width: 18px; padding: 0; }
+
+/* 교통/주차 안내 */
+.etcarea { background: var(--paper-warm); }
+.etcarea .etc_info {
+    margin: 0 var(--gut);
+    padding: 30px 0 var(--sec-pad);
+    border-bottom: 0;
+}
+.etcarea li:not(:last-child) { margin-bottom: 22px; }
+.etcarea li strong {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    color: var(--accent);
+    margin-bottom: 8px;
+}
+.etcarea li strong::before {
+    content: "";
+    display: inline-block;
+    width: 12px; height: 1px;
+    margin: -4px 8px 0 0;
+    background: var(--accent-soft);
+    vertical-align: middle;
+}
+.etcarea li span {
+    font-size: 14.5px;
+    line-height: 1.85;
+    color: var(--ink-body);
+    letter-spacing: .01em;
+}
+
+/* ============================================================
+   7. 마음 전하기 (계좌)
+   ============================================================ */
+.remittance {
+    background: var(--paper);
+    padding-bottom: 10px;
+}
+.remittance:before { display: none; }
+.remittance .btn_wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 var(--gut);
+    margin: 0;
+}
+.remittance .btn_wrap:after { display: none; }
+.remittance .btn_wrap .an_btn,
+.remittance .btn_wrap .btn.type03 {
+    display: block;
+    width: 100%;
+    height: 54px;
+    line-height: 52px;
+    margin: 0 !important;
+    background: var(--paper-warm);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    font-family: var(--font-kr);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    color: var(--ink);
+    text-align: center;
+    box-sizing: border-box;
+    transition: background .3s var(--ease);
+}
+.remittance .btn_wrap .an_btn:active { background: var(--paper-deep); }
+
+div.flowergiftsub {
+    background: var(--paper);   /* 원본의 #f9f9fb 띠 제거 */
+    padding-bottom: 0;
+}
+div.flowergiftsub .btn_wrap {
+    padding: 10px var(--gut) 0;
+    margin: 0;
+}
+/* style.css 의 `div.flowergiftsub .btn_wrap .fl_btn` 를 이기려면 요소 선택자가 필요합니다 */
+div.flowergiftsub .btn_wrap a.fl_btn {
+    display: block;
+    width: 100%;
+    height: 54px;
+    line-height: 52px;
+    background: var(--paper-warm);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    font-family: var(--font-kr);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    color: var(--ink);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* 계좌 팝업 — 하단 시트 형태로 */
+.account_pop { text-align: initial; }
+.account_pop:before { display: none; }
+.account_pop .pop_mask {
+    position: fixed;
+    inset: 0;
+    background: rgba(30, 24, 21, .42);
+    animation: sheetFade .3s var(--ease) both;
+}
+.account_pop .layer_pop {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 800px;
+    padding: 8px 20px 20px;
+    background: var(--paper);
+    border: 0;
+    border-radius: 22px 22px 0 0;
+    box-shadow: 0 -10px 40px rgba(60, 40, 32, .16);
+    animation: sheetUp .42s var(--ease) both;
+}
+/* 시트 상단 손잡이 */
+.account_pop .layer_pop::before {
+    content: "";
+    display: block;
+    width: 42px; height: 4px;
+    margin: 8px auto 6px;
+    border-radius: 4px;
+    background: var(--line);
+}
+@keyframes sheetUp   { from { transform: translate(-50%, 100%); } to { transform: translate(-50%, 0); } }
+@keyframes sheetFade { from { opacity: 0; } to { opacity: 1; } }
+
+.account_pop .layer_pop .account_list {
+    max-height: 58vh;
+    padding: 10px 2px 0;
+}
+.account_pop .layer_pop dl {
+    background: var(--paper-warm);
+    border-radius: 14px;
+    padding: 18px 18px 16px;
+}
+.account_pop .layer_pop dl:not(:first-child) { margin-top: 10px; }
+.account_pop .layer_pop dl dt {
+    border-bottom: 0;
+    padding: 0 0 8px;
+    margin: 0;
+    font-family: var(--font-kr) !important;
+    font-size: 13px !important;
+    font-weight: 700;
+    letter-spacing: .06em;
+    color: var(--accent);
+}
+.account_pop .layer_pop dl dd {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--ink-body);
+}
+.account_pop .layer_pop dl dd .action { margin-top: 12px; }
+.account_pop .layer_pop dl dd .copy_btn {
+    display: inline-block;
+    padding: 9px 18px;
+    background: var(--ink);
+    color: #fff;
+    border-radius: 999px;
+    font-family: var(--font-kr);
+    font-size: 13px;
+    letter-spacing: .04em;
+}
+.account_pop .btn_wrap.type01 { margin-top: 14px; }
+.account_pop .btn_wrap.type01 .btn.close {
+    display: block;
+    width: 100%;
+    height: 52px;
+    line-height: 52px;
+    background: var(--paper-warm);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    font-family: var(--font-kr);
+    font-size: 15px;
+    letter-spacing: .06em;
+    color: var(--ink-body);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* ============================================================
+   8. 푸터
+   ============================================================ */
+.footer {
+    background: var(--paper);
+    text-align: center;
+    padding: var(--sec-pad) var(--gut) 56px;
+    margin-top: 20px;
+    border-top: 1px solid var(--line);
+}
+.footer .sns_list {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    background: none;      /* 원본의 회색(#666) 띠 제거 */
+}
+.footer .sns_list::after { display: none; }
+.footer .sns_list li {
+    float: none;
+    flex: 0 0 auto;
+    margin: 0 !important;
+    border-right: 0;       /* 원본의 칸막이 선 제거 */
+}
+/* 이 아이콘 파일들은 '아이콘 + 흰 글자'가 함께 그려진 SVG(70~84 × 19)입니다.
+   원본은 회색 띠 위에 흰 글자로 얹는 구조였어서, 밝은 배경에서는 글자가 보이지
+   않습니다. invert 로 색을 뒤집어 밝은 배경에서도 읽히게 만듭니다. */
+.footer .sns_list li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 42px;
+    padding: 0 12px;
+    background: var(--paper-warm);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    transition: background .3s var(--ease);
+}
+.footer .sns_list li a:active { background: var(--paper-deep); }
+.footer .sns_list li a img {
+    width: auto;
+    height: 17px;
+    filter: invert(1);
+    opacity: .58;
+}
+
+.footer .dvfooter {
+    background: none;      /* 원본의 #F8F8F8 블록 제거 */
+    margin-top: 34px;
+}
+.footer .dvfooter p {
+    font-family: var(--font-kr) !important;
+    color: var(--ink-faint) !important;
+    letter-spacing: .08em;
+}
+
+/* 토스트 */
+#wrap .toast p,
+div.toast p {
+    font-family: var(--font-kr);
+    background: rgba(47, 42, 39, .92);
+    color: #fff;
+    border-radius: 999px;
+    padding: 13px 24px;
+    font-size: 14px;
+    letter-spacing: .04em;
+    box-shadow: 0 6px 24px rgba(60, 40, 32, .22);
+}
+
+/* ============================================================
+   9. 반응형 — 넓은 화면에서는 카드처럼
+   ============================================================ */
+@media screen and (min-width: 560px) {
+    :root { --gut: 12%; --sec-pad: 86px; }
+    .hero__meta { font-size: 17px; }
+}
+@media screen and (max-width: 359px) {
+    :root { --gut: 6%; --sec-pad: 60px; }
+    .wd__num { font-size: 21px; }
+}
