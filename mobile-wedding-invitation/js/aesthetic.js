@@ -175,16 +175,46 @@
         setInterval(tick, 1000);
     }
 
-    /* ── 4. 갤러리 더보기 ───────────────────────────────── */
+    /* ── 4. 갤러리 ──────────────────────────────────────── */
+
+    /* 각 사진의 원본 비율을 타일에 그대로 물려줍니다.
+       마크업의 data-size="800x1191.85" 가 곧 그 사진의 가로x세로입니다.
+       (PhotoSwipe 도 같은 값을 쓰므로 사진을 교체할 땐 data-size 도 함께 고쳐야 합니다)
+
+       이렇게 미리 비율을 잡아두면
+         - 정방형이든 9:16 세로든 잘리지 않고 원본 그대로 들어가고
+         - 이미지가 도착하기 전에 이미 자리를 차지하므로 로딩 중 화면이 튀지 않습니다. */
+    function applyTileRatios() {
+        var links = document.querySelectorAll('.skin_gallery figure > a[data-size]');
+        Array.prototype.forEach.call(links, function (link) {
+            var size = (link.getAttribute('data-size') || '').split('x');
+            var w = parseFloat(size[0]);
+            var h = parseFloat(size[1]);
+            if (!(w > 0) || !(h > 0)) return;          // 값이 이상하면 CSS 폴백에 맡깁니다
+            link.style.aspectRatio = w + ' / ' + h;
+        });
+    }
+
     function initGalleryMore() {
         var grid = document.querySelector('.skin_gallery');
         var btn  = document.querySelector('.gallery__more');
         if (!grid || !btn) return;
 
-        var total  = grid.querySelectorAll('figure').length;
-        var shown  = 9;
+        var figures = grid.querySelectorAll('figure');
+        var total   = figures.length;
 
-        if (total <= shown) { btn.classList.add('is-hidden'); grid.classList.add('is-expanded'); return; }
+        /* 몇 장을 처음에 보여줄지는 CSS 가 정합니다(:nth-of-type).
+           여기서는 그 결과를 세기만 해서 두 곳에 숫자가 흩어지지 않게 합니다. */
+        var shown = 0;
+        Array.prototype.forEach.call(figures, function (fig) {
+            if (getComputedStyle(fig).display !== 'none') shown++;
+        });
+
+        if (shown >= total) {
+            grid.classList.add('is-expanded');
+            btn.classList.add('is-hidden');
+            return;
+        }
 
         btn.textContent = '사진 더보기 (' + (total - shown) + ')';
         btn.addEventListener('click', function () {
@@ -198,6 +228,7 @@
         applyStagger();
         renderCalendar(document.getElementById('wdCal'));
         startTimers();
+        applyTileRatios();
         initGalleryMore();
         initReveal();
     }

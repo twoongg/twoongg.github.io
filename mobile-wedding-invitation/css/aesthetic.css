@@ -542,27 +542,42 @@ img { max-width: 100%; }
    5. 갤러리
    ============================================================ */
 .gallery { background: var(--paper); }
-.gallery .area { padding: 0 var(--gut) var(--sec-pad); }
+.gallery .area { padding: 0 5% var(--sec-pad); }
 
+/* 매스너리 2열.
+   PhotoSwipe 의 parseThumbnailElements 가 .skin_gallery 의 '직계 자식'을
+   figure 로 가정하므로 열 래퍼 div 를 넣을 수 없습니다. 그래서 DOM 은 평평하게
+   두고 CSS 다단(column)으로 벽돌 배치를 만듭니다. */
 .skin_gallery {
-    display: grid;
-    /* minmax(0,1fr) — 1fr 이 콘텐츠 최소폭에 밀려 컨테이너 밖으로
-       삐져나가던 문제(우측 열 잘림)를 막습니다. */
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 6px;
+    display: block;
+    column-count: 2;
+    column-gap: 8px;
 }
-.skin_gallery figure { min-width: 0; }
+.skin_gallery figure {
+    min-width: 0;
+    margin: 0 0 8px;
+    /* 사진 한 장이 두 열에 걸쳐 쪼개지지 않게 */
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+}
 .skin_gallery figure a {
     display: block;
     width: 100%;
-    aspect-ratio: 1 / 1;
+    /* 실제 비율은 js/aesthetic.js 가 각 사진의 data-size 를 읽어 덮어씁니다.
+       아래 값은 JS 가 실패했을 때의 폴백입니다. */
+    aspect-ratio: 3 / 4;
     background-position: center center !important;
     background-size: cover !important;
-    border-radius: 3px;
+    border-radius: 4px;
     overflow: hidden;
     transition: transform .5s var(--ease), filter .5s var(--ease);
 }
-.skin_gallery figure a:active { transform: scale(.97); filter: brightness(.94); }
+.skin_gallery figure a:active { transform: scale(.98); filter: brightness(.94); }
+
+@media screen and (min-width: 560px) {
+    .skin_gallery { column-count: 3; }
+}
 /* 프레임 이미지는 이제 보이지 않지만, PhotoSwipe 가 확대 애니메이션의 시작
    좌표를 이 <img> 의 위치에서 읽어옵니다. display:none 으로 지우면 확대가
    화면 좌상단(0,0)에서 튀어나오므로, 자리는 유지한 채 투명하게만 만듭니다. */
@@ -573,8 +588,10 @@ img { max-width: 100%; }
     opacity: 0;
 }
 
-/* 처음에는 9장만 — 나머지는 '더보기' 전까지 로드조차 하지 않습니다 */
-.skin_gallery:not(.is-expanded) figure:nth-of-type(n+10) { display: none; }
+/* 처음에는 8장만 — 나머지는 '더보기' 전까지 배경 이미지를 내려받지도 않습니다.
+   이 숫자가 노출 장수의 유일한 기준입니다. js/aesthetic.js 는 하드코딩하지 않고
+   '지금 보이는 figure 수'를 세어 버튼 문구를 만듭니다. */
+.skin_gallery:not(.is-expanded) figure:nth-of-type(n+9) { display: none; }
 
 .gallery__more {
     display: block;
