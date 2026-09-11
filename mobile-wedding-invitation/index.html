@@ -17,33 +17,15 @@
     <meta property="og:description" content="저희 두 사람의 결혼식에 초대합니다." />
 
     <title>태웅 수진 결혼식에 초대합니다</title>
-    <!-- 다크모드 강제 방지 -->
-    <meta name="color-scheme" content="light only">
-    <meta name="supported-color-schemes" content="light">
+    <!-- 이 페이지는 라이트 전용입니다.
+         삼성 인터넷의 '웹페이지 어둡게 표시'는 이 선언으로 막을 수 없습니다 —
+         네 가지 우회로를 실측으로 모두 확인했으니 다시 시도하지 마세요.
+         실제 배포 경로인 카카오톡 인앱 브라우저에서는 정상 표시되므로 대응하지 않습니다.
+         경위와 실측 결과: docs/PROJECT_STATUS.md 의 '3-2. 다크모드' 항목. -->
+    <meta name="color-scheme" content="light">
     <style>
-        /* 시스템 다크모드 설정 무시 및 라이트모드 고정 */
-        :root {
-            color-scheme: light only;
-        }
-        html, body {
-            forced-color-adjust: none; /* 브라우저의 강제 색상 조정 방지 */
-        }
-        @media (prefers-color-scheme: dark) {
-            body {
-                background-color: #ffffff !important;
-                color: #333333 !important;
-            }
-            /* 기타 다크모드에서 변할 수 있는 요소들 강제 고정 */
-            #wrap {
-                background-color: #ffffff !important;
-            }
-            .templatearea {
-                background-color: inherit !important;
-            }
-            .text, p, span, dl, dt, dd {
-                color: inherit !important;
-            }
-        }
+        :root { color-scheme: light; }
+        html, body { background: #ffffff; }
     </style>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/loader.css">
