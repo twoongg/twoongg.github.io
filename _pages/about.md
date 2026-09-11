@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I'm an incoming AI Research Engineer at [Samsung Research](https://research.samsung.com/). My research background is in embodied agents and large models, which I specialized in as a Research Assistant at the [SNU Machine Perception and Reasoning Lab](https://snumprlab.github.io/) at [Seoul National University](https://en.snu.ac.kr/) advised by Prof. [Jonghyun Choi](http://ppolon.github.io/). Prior to that, I worked as a mechanical engineer at [Samsung Electronics](https://www.samsung.com/us/).
+I'm an AI Research Engineer at [Samsung Research](https://research.samsung.com/), where I am currently working on world action models. My research background is in embodied agents and large models, which I specialized in as a Research Assistant at the [SNU Machine Perception and Reasoning Lab](https://snumprlab.github.io/) at [Seoul National University](https://en.snu.ac.kr/) advised by Prof. [Jonghyun Choi](http://ppolon.github.io/). Prior to that, I worked as a mechanical engineer at [Samsung Electronics](https://www.samsung.com/us/).
 
 I received an M.S. degree in [Artificial Intelligence](https://ai.yonsei.ac.kr/eng/index.php) from [Yonsei University](https://www.yonsei.ac.kr/en_sc/index.jsp)
 under the supervision of Prof. [Jonghyun Choi](http://ppolon.github.io/)
